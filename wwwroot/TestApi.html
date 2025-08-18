@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>测试卫宁健康接口</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body style="text-align:center;">
+    <div style="text-align:left;border-bottom:1px solid black">
+        <button onclick="GetCurrentWriterControl().ShowAboutDialog()">关于</button>
+        <button onclick="ClearContent()">清空</button>
+        <button onclick="FileNew()">新建</button>
+        <button onclick="FileOpen()">打开</button>
+        <button onclick="Refresh()">刷新</button>
+        <button onclick="DownLoadFile('xml')">下载XML</button>
+        <button onclick="SaveDocumentToString()">保存为XML字符串</button>
+
+        <button onclick="GetDocumentPageSettings()">获取页面设置</button>
+        <button onclick="ChangeDocumentSettings()">设置页面设置</button>
+        <button onclick="GetDocumentGridLine()">获取文档网格</button>
+        <button onclick="SetDocumentGridLine()">设置文档网格</button>
+        <br />
+        <button onclick="DCExecuteCommand('Cut')">剪切</button>
+        <button onclick="DCExecuteCommand('Copy')">复制</button>
+        <button onclick="DCExecuteCommand('Paste')">粘贴</button>
+        <button onclick="DCExecuteCommand('CopyAsText')">纯文本复制</button>
+        <button onclick="DCExecuteCommand('PasteAsText')">纯文本粘贴</button>
+        <button onclick="DCExecuteCommand('FormatBrush')">格式刷</button>
+        <button onclick="DCExecuteCommand('Undo')">撤销</button>
+        <button onclick="DCExecuteCommand('Redo')">重做</button>
+        <button onclick="DCExecuteCommand('FontName')">字体名称</button>
+        <button onclick="DCExecuteCommand('fontsize')">字体大小</button>
+        <button onclick="DCExecuteCommand('bold')">粗体</button>
+        <button onclick="DCExecuteCommand('Italic')">斜体</button>
+        <button onclick="DCExecuteCommand('Underline')">下划线</button>
+        <button onclick="DCExecuteCommand('Strikethrough')">删除线</button>
+        <button onclick="DCExecuteCommand('Color')">前景色</button>
+        <button onclick="DCExecuteCommand('BackColor')">背景色</button>
+        <button onclick="DCExecuteCommand('Superscript')">上标</button>
+        <button onclick="DCExecuteCommand('Subscript')">下标</button>
+        <button onclick="DCExecuteCommand('Fontborder')">字符边框</button>
+
+        <button onclick="CurrentStyle()">当前字体格式</button>
+
+        <button onclick="DCExecuteCommand('AlignLeft')">左对齐</button>
+        <button onclick="DCExecuteCommand('AlignRight')">右对齐</button>
+        <button onclick="DCExecuteCommand('AlignCenter')">居中对齐</button>
+        <button onclick="DCExecuteCommand('AlignDistribute')">分散对齐</button>
+        <button onclick="GetCurrentParagraphStyle()">当前段落格式</button>
+        <button onclick="SetCurrentParagraphStyle()">设置段落格式</button>
+
+        <br />
+        <button onclick="getModified()">文档是否改变</button>
+        <button onclick="resetModified()">重置内容改变</button>
+        <button onclick="Readonly()">文档只读</button>
+        <button onclick="SetPageLayoutMode('SingleColumn')">单栏展示</button>
+        <button onclick="SetPageLayoutMode('MultiColumn')">多栏展示</button>
+        <button onclick="SetPageLayoutMode('Horizontal')">水平平铺</button>
+
+
+
+        <br />
+        
+
+    </div>
+
+    <div id="myWriterControl" dctype="WriterControlForWASM"
+         style="height: 1000px; border-bottom: 0px solid black; background-attachment: fixed; background-size: cover; background-position: center top; "
+         RuleVisible="true" AllowDrop="true" AllowDragContent="true" RuleBackColor="rgb(155, 187, 227)"
+         ServicePageUrl="https://www.dcwriter.cn:8099/ServicePage.aspx" CaretCss="5,Blue"
+         PageCssString="box-shadow:0px 0px 0px grey">
+        正在加载...
+    </div>
+
+    <script src="_framework/dcwriter5.js"></script>
+    <script src="js/DemoApp.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script language="javascript">
+        let ctl = document.getElementById("myWriterControl");
+        function WriterControl_OnLoad(rootElement) {
+            console.log('控件加载完毕');
+
+
+            rootElement.DocumentLoad = function (eventSender, args) {
+                console.log("文件加载完毕");
+
+
+
+            };
+           
+            rootElement.ondocumentclick = function (e) {
+                console.log("点击事件");
+            };
+            rootElement.ondocumentdblclick = function (e) {
+                console.log("双击事件");
+            };
+
+        };
+        function ClearContent() {
+            var result = ctl.ClearContent();
+            console.log(result);
+        }
+        function FileNew() {
+            var result = ctl.DCExecuteCommand("FileNew", false, null);
+            console.log(result);
+        }
+        function FileOpen() {
+            ctl.DCExecuteCommand("FileOpen", true, null);
+        }
+        function Refresh() {
+            ctl.RefreshDocument();
+        }
+        function DownLoadFile(format) {
+            if (format == null || format == "") {
+                format = "xml";
+            }
+            ctl.DownLoadFile(format);
+        }
+        function Refresh() {
+            ctl.RefreshDocument();
+        }
+        function SaveDocumentToString() {
+            var result = ctl.SaveDocumentToString('xml');
+            console.log(result);
+        }
+
+        function GetDocumentPageSettings() {
+            var result = ctl.GetDocumentPageSettings();
+            console.log(result);
+        }
+        function ChangeDocumentSettings() {
+
+            var opts = {
+                PaperKind: "Custom",//自定义        
+                PaperWidth: 810,//宽度 毫米        
+                PaperHeight: 697,//高度 毫米        
+                Landscape: false,//横向，纵向        
+                LeftMargin: 60,//左边距 单位 毫米        
+                RightMargin: 60,//右边距 单位 毫米  
+                TopMargin: 30,//上边距 单位 毫米        
+                BottomMargin: 30,//下边距 单位 毫米  
+                HeaderDistance: 50,//页眉位置 单位 毫米        
+                FooterDistance: 10,//页脚位置 单位 毫米 
+            };
+            ctl.ChangeDocumentSettings(opts);
+            ctl.RefreshDocument();
+        }
+        function GetDocumentGridLine() {
+            var result = ctl.GetDocumentGridLine();
+            console.log(result);
+        }
+        function SetDocumentGridLine() {
+            let gridLineInfo = {
+                "Visible": true,
+                "AlignToGridLine": true,
+                "ColorValue": "#EA161E",
+                "GridNumInOnePage": 32,
+                "LineStyle": "51",//System.Drawing.Drawing2D.DashStyle枚举的值
+                "Printable": true
+            };
+            ctl.SetDocumentGridLine(gridLineInfo);
+            ctl.RefreshDocument();
+        }
+        
+        function CurrentStyle() {
+            var result = ctl.CurrentStyle;
+            console.log(result);
+        }
+        function SetCurrentParagraphStyle() {           
+            var result = ctl.SetCurrentParagraphStyle({
+              
+                "Align": "Justify",
+                "BorderTop": true,
+                "BorderRight": true,
+                "BorderLeft": true,
+                "BorderBottom": true,
+                "BorderBottomColorString": "red",
+                "BorderRightColorString": "red",
+                "BorderLeftColorString": "red",
+                "BorderTopColorString": "red",
+                "BorderStyle": "Solid",
+                "BorderWidth": 30,
+               
+                "PaddingBottom": 50,
+                "PaddingLeft": 40,
+                "PaddingRight": 40,
+                "PaddingTop": 10,
+                "BackgroundColorString": "red",
+                "LineSpacing": 10,
+                "LeftIndent": 100,
+                "LineSpacingStyle": "SpaceDouble",
+                "SpacingAfterParagraph": 200,
+                "SpacingBeforeParagraph": 200,
+                "FirstLineIndent": 100,
+                "ParagraphOutlineLevel": -3,
+                "ParagraphMultiLevel": true,
+                "ParagraphListStyle": "ListNumberStyleArabic2",
+                "FontStyle": "Regular",
+                "FontHeight": 10,
+                "FontName": "黑体",
+                "FontSize": 30.5,
+              
+               
+            });
+        }
+
+        function GetCurrentParagraphStyle() {
+            var result = ctl.GetCurrentParagraphStyle();
+            console.log(result);
+        }
+        
+        function DCExecuteCommand(name) {
+
+            if (name == 'Cut') {
+                ctl.DCExecuteCommand('Cut', false, null);
+            }
+            if (name == 'Paste') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Copy') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'CopyAsText') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'PasteAsText') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Undo') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Redo') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'FormatBrush') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Color') {
+                ctl.DCExecuteCommand(name, false, 'Red');
+            }
+            if (name == 'bold') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Italic') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Strikethrough') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Underline') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'FontName') {
+                ctl.DCExecuteCommand(name, false, '微软雅黑');
+            }
+            if (name == "fontsize") {
+                ctl.DCExecuteCommand('Fontsize', false, "二号");
+            }
+            if (name == 'BackColor') {
+                ctl.DCExecuteCommand(name, false, 'Yellow');
+            }
+            if (name == 'Superscript') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'Subscript') {
+                ctl.DCExecuteCommand(name, false, null);
+            }            
+            if (name == 'Fontborder') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+
+            if (name == 'AlignLeft') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'AlignRight') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'AlignCenter') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+            if (name == 'AlignDistribute') {
+                ctl.DCExecuteCommand(name, false, null);
+            }
+        }
+        function getModified() {
+            let ctl = document.getElementById("myWriterControl");
+            var result = ctl.getModified();
+            alert(result);
+        }
+        function resetModified() {
+            let ctl = document.getElementById("myWriterControl");
+            var result = ctl.resetModified(false);
+            alert(result);
+        }
+        function Readonly() {
+            let ctl = document.getElementById("myWriterControl");
+            ctl.Readonly = !ctl.Readonly;
+        }
+        function SetPageLayoutMode(value) {
+            var myWriterControl = GetCurrentWriterControl();
+            myWriterControl.SetPageLayoutMode(value);
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

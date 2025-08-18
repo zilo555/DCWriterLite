@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Source\DCWriter5\trunk\DCWriterLite\bin\Release\net9.0\browser-wasm\publish\</_PublishTargetUrl>
+    <History>True|2025-06-15T11:46:06.9398524Z||;True|2025-06-13T15:10:39.6373664+08:00||;True|2025-06-13T12:19:27.6845742+08:00||;True|2025-06-03T13:49:43.0288349+08:00||;True|2025-05-30T17:36:26.6287713+08:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

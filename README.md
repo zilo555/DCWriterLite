@@ -1,5 +1,10 @@
-# Introduction to DCWriterLite 
+﻿# DCWriterLite 
 August 18, 2025
+
+<br />Author : yongfu-yuan(袁永福) from CHINA . Email:28348092@qq.com,Site:[https://dcwriter.cn/](https://dcwriter.cn/).
+# update log
+
+# Introduction
 
 <br/>&nbsp; &nbsp; **DCWriterLite** is a powerful open-source online RTF rich text editor component designed for enterprise-level applications. Unlike other software such as TinyMCE and CKEditor, which are developed based on the browser's HTML DOM, DCWriterLite builds its own DOM structure, uses XML to store documents, and employs Canvas for document rendering and SVG for document printing. This enables DCWriterLite to overcome the limitations of the HTML DOM and achieve highly advanced document editing features, such as real-time pagination, reliable redo/undo functionality, and robust form fields. It also offers unique secondary development capabilities, allowing developers to extend existing document element types and create their own, thus meeting more complex business requirements. DCWriterLite is developed based on Blazor Webassembly 9.0 and has been modified at the WASM low-level framework level. Compared to other Blazor WASM programs, it significantly reduces the size of the executable file, which enhances software loading speed and reduces memory usage. <br/>&nbsp; &nbsp; DCWriterLite is a pure front-end component with no restrictions on the server side, making it convenient to adapt to various operating environments. <br/>&nbsp; &nbsp; DCWriterLite is an open-source software. We also offer a corresponding commercial version, DCWriter, which implements all the functions of DCWriterLite and provides more abundant software features as well as reliable technical support and services. 
 # DCWriterLite Open Source Edition Feature List
@@ -9,8 +14,8 @@ August 18, 2025
 - Pure front-end components, does not rely on server-side, and does not depend on any third-party components.
 ## File Operations:
 - Create new file
-- Open files, supports XML, TXT, RTF formats.
-- Save files, supports XML, TXT, RTF formats.
+- Open files, supports XML formats.
+- Save files, supports XML formats.
 - Print settings
 - Paper type
 - Paper orientation
@@ -73,8 +78,8 @@ DCWriter Business Edition adds the following features on the basis of the open-s
 ## Runtime Environment
 - Supports Blazor WASM 7.0/8.0/9.0 to support lower-version browsers.
 ## File Operations
-- Open files, supporting JSON, OFD, and HTML formats.
-- Save files, supporting JSON, OFD, PDF, and HTML formats.
+- Open files, supporting RTF, JSON, OFD, and HTML formats.
+- Save files, supporting RTF, JSON, OFD, PDF, and HTML formats.
 - Print Settings
 - Enable or disable headers and footers
 - Continue printing
@@ -215,8 +220,8 @@ Compared to the open-source version, the commercial version enhances the DOM mod
   - 纯前端组件，不依赖服务器端，不依赖任何第三方组件。
 ## 文件操作：
   - 新建文件
-  - 打开文件，支持XML、TXT、RTF格式。
-  - 保存文件，支持XML、TXT、RTF格式。
+  - 打开文件，支持XML格式。
+  - 保存文件，支持XML格式。
   - 打印设置
      - 纸张类型
      - 纸张方向
@@ -282,8 +287,8 @@ Compared to the open-source version, the commercial version enhances the DOM mod
 ## 运行环境
   - 支持Blazor WASM 7.0/8.0/9.0，用于支持低版本的浏览器。
 ## 文件操作
-  - 打开文件，支持JSON、OFD、HTML格式。
-  - 保存文件，支持JSON、OFD、PDF、HTML格式。
+  - 打开文件，支持RTF、JSON、OFD、HTML格式。
+  - 保存文件，支持RTF、JSON、OFD、PDF、HTML格式。
   - 打印设置
      - 是否启用禁用页眉页脚
      - 续打

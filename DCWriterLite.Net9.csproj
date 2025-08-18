@@ -1,0 +1,506 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PublishTrimmed>true</PublishTrimmed>
+    <BlazorEnableCompression>true</BlazorEnableCompression>
+    <TrimMode>full</TrimMode>
+    <EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+    <EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+    <EventSourceSupport>false</EventSourceSupport>
+    <HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+    <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <WasmStripILAfterAOT>false</WasmStripILAfterAOT>
+    <!--<RunAOTCompilation>true</RunAOTCompilation>-->
+    <DebuggerSupport>false</DebuggerSupport>
+    <HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+    <!--<UseSystemResourceKeys>true</UseSystemResourceKeys>-->
+    <WasmEnableWebcil>false</WasmEnableWebcil>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
+	  <BlazorWebAssemblyJSPath>Source/net90/blazor.webassembly.js</BlazorWebAssemblyJSPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+    <RunAOTCompilation>False</RunAOTCompilation>
+    <DefineConstants>$(DefineConstants); DCWriterForWASM </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
+    <RunAOTCompilation>False</RunAOTCompilation>
+    <DefineConstants>$(DefineConstants); DCWriterForWASM </DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="DCSoft.WASM.OpenSource\**" />
+    <Content Remove="Source\DCSoft.Writer.Core\Serialization\TXT\**" />
+    <Content Remove="Source\DCWriterForWinForm\Barcode\**" />
+    <Content Remove="Source\DCWriterForWinForm\RTF\**" />
+    <Content Remove="Source\System.Private.Xml\System\Xml\Dom\**" />
+    <Content Remove="Source\System.Private.Xml\System\Xml\Schema\**" />
+    <Content Remove="Source\System.Private.Xml\System\Xml\Serialization\**" />
+    <EmbeddedResource Remove="DCSoft.WASM.OpenSource\**" />
+    <EmbeddedResource Remove="Source\DCSoft.Writer.Core\Serialization\TXT\**" />
+    <EmbeddedResource Remove="Source\DCWriterForWinForm\Barcode\**" />
+    <EmbeddedResource Remove="Source\DCWriterForWinForm\RTF\**" />
+    <EmbeddedResource Remove="Source\System.Private.Xml\System\Xml\Dom\**" />
+    <EmbeddedResource Remove="Source\System.Private.Xml\System\Xml\Schema\**" />
+    <EmbeddedResource Remove="Source\System.Private.Xml\System\Xml\Serialization\**" />
+    <None Remove="DCSoft.WASM.OpenSource\**" />
+    <None Remove="Source\DCSoft.Writer.Core\Serialization\TXT\**" />
+    <None Remove="Source\DCWriterForWinForm\Barcode\**" />
+    <None Remove="Source\DCWriterForWinForm\RTF\**" />
+    <None Remove="Source\System.Private.Xml\System\Xml\Dom\**" />
+    <None Remove="Source\System.Private.Xml\System\Xml\Schema\**" />
+    <None Remove="Source\System.Private.Xml\System\Xml\Serialization\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\_framework\WriterControl_EF.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Properties\PublishProfiles\FolderProfile.pubxml.user" />
+    <None Include="Source\Properties\PublishProfiles\FolderProfile1.pubxml.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.5" PrivateAssets="all" />
+  </ItemGroup>
+   
+  <ItemGroup>
+    <TrimmerRootAssembly Include="DCSoft.WASM" />
+    </ItemGroup>
+  <PropertyGroup>
+    <EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- PublishTrimmed>true</PublishTrimmed -->
+    <BlazorEnableTimeZoneSupport>true</BlazorEnableTimeZoneSupport>
+    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+    <AssemblyName>DCSoft.WASM</AssemblyName>
+    <RootNamespace>DCSoft.WASM</RootNamespace>
+    <AnalysisLevel>none</AnalysisLevel>
+    <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="E:\Source\DCWriter5\trunk\open-source\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Source\DCJsonSerialization.cs" />
+    <Compile Include="Source\DCSoft.Common\AttributeString.cs" />
+    <Compile Include="Source\DCSoft.Common\BinaryHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\CellIndex.cs" />
+    <Compile Include="Source\DCSoft.Common\DataObjectHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\DateTimeCommon.cs" />
+    <Compile Include="Source\DCSoft.Common\DCConsole.cs" />
+    <Compile Include="Source\DCSoft.Common\DCEnumHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\DCList.cs" />
+    <Compile Include="Source\DCSoft.Common\DCObjectPool.cs" />
+    <Compile Include="Source\DCSoft.Common\DCSR.cs" />
+    <Compile Include="Source\DCSoft.Common\DCStack.cs" />
+    <Compile Include="Source\DCSoft.Common\DoubleKeyDictionary.cs" />
+    <Compile Include="Source\DCSoft.Common\DoubleNaN.cs" />
+    <Compile Include="Source\DCSoft.Common\FileHeaderHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\FileHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\FormatUtils.cs" />
+    <Compile Include="Source\DCSoft.Common\IDList.cs" />
+    <Compile Include="Source\DCSoft.Common\ListDebugView.cs" />
+    <Compile Include="Source\DCSoft.Common\ListDictionary.cs" />
+    <Compile Include="Source\DCSoft.Common\ListReverseEnumrable.cs" />
+    <Compile Include="Source\DCSoft.Common\LoaderListBuffer.cs" />
+    <Compile Include="Source\DCSoft.Common\StringCommon.cs" />
+    <Compile Include="Source\DCSoft.Common\StringConvertHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\StringFormatHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\SubList.cs" />
+    <Compile Include="Source\DCSoft.Common\TreeNodeEnumerable.cs" />
+    <Compile Include="Source\DCSoft.Common\ValueTypeHelper.cs" />
+    <Compile Include="Source\DCSoft.Common\ValueValidateStyle.cs" />
+    <Compile Include="Source\DCSoft.Common\XDependencyObject.cs" />
+    <Compile Include="Source\DCSoft.Common\XDependencyProperty.cs" />
+    <Compile Include="Source\DCSoft.Common\XMLSerializeHelper.cs" />
+    <Compile Include="Source\DCSoft.Data\ValueFormater.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ContentStyle.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ContentStyleContainer.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ContentStyleList.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ContentStylePropertyIDConsts.cs" />
+    <Compile Include="Source\DCSoft.Drawing\DCContentAlignment.cs" />
+    <Compile Include="Source\DCSoft.Drawing\DCGraphics.cs" />
+    <Compile Include="Source\DCSoft.Drawing\DocumentContentAlignment.cs" />
+    <Compile Include="Source\DCSoft.Drawing\DrawerUtil.cs" />
+    <Compile Include="Source\DCSoft.Drawing\GraphicsUnitConvert.cs" />
+    <Compile Include="Source\DCSoft.Drawing\InnerPaintEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Drawing\LineShapeCounter.cs" />
+    <Compile Include="Source\DCSoft.Drawing\LineSpacingStyle.cs" />
+    <Compile Include="Source\DCSoft.Drawing\MathCommon.cs" />
+    <Compile Include="Source\DCSoft.Drawing\MultiRectangleTransform.cs" />
+    <Compile Include="Source\DCSoft.Drawing\NewPDFGraphics.cs" />
+    <Compile Include="Source\DCSoft.Drawing\PageContentPartyStyle.cs" />
+    <Compile Include="Source\DCSoft.Drawing\PageFrameDrawer.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ParagraphListHelper.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ParagraphListStyle.cs" />
+    <Compile Include="Source\DCSoft.Drawing\RectangleCommon.cs" />
+    <Compile Include="Source\DCSoft.Drawing\RectangleCounter.cs" />
+    <Compile Include="Source\DCSoft.Drawing\ResizeableType.cs" />
+    <Compile Include="Source\DCSoft.Drawing\SimpleRectangleTransform.cs" />
+    <Compile Include="Source\DCSoft.Drawing\StandardPaperSizeInfo.cs" />
+    <Compile Include="Source\DCSoft.Drawing\TransformBase.cs" />
+    <Compile Include="Source\DCSoft.Drawing\TrueTypeFontSnapshort.cs" />
+    <Compile Include="Source\DCSoft.Drawing\VerticalAlignStyle.cs" />
+    <Compile Include="Source\DCSoft.Drawing\XFontInfo.cs" />
+    <Compile Include="Source\DCSoft.Drawing\XFontValue.cs" />
+    <Compile Include="Source\DCSoft.Drawing\XImageValue.cs" />
+    <Compile Include="Source\DCSoft.Drawing\XPaddingF.cs" />
+    <Compile Include="Source\DCSoft.Printing\DCGridLineInfo.cs" />
+    <Compile Include="Source\DCSoft.Printing\DCPrintDocumentOptions.cs" />
+    <Compile Include="Source\DCSoft.Printing\DCPrintMode.cs" />
+    <Compile Include="Source\DCSoft.Printing\InnerPageDocumentPaintEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Printing\MultiPageTransform.cs" />
+    <Compile Include="Source\DCSoft.Printing\PageContentDrawer.cs" />
+    <Compile Include="Source\DCSoft.Printing\PageDocumentPaintEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Printing\PageLayoutInfo.cs" />
+    <Compile Include="Source\DCSoft.Printing\PageViewControl.cs" />
+    <Compile Include="Source\DCSoft.Printing\PrintPage.cs" />
+    <Compile Include="Source\DCSoft.Printing\PrintPageCollection.cs" />
+    <Compile Include="Source\DCSoft.Printing\XPageSettings.cs" />
+    <Compile Include="Source\DCSoft.WinForms\DCUIHelper.cs" />
+    <Compile Include="Source\DCSoft.WinForms\Design\FontSizeEditor.cs" />
+    <Compile Include="Source\DCSoft.WinForms\DocumentViewControl.cs" />
+    <Compile Include="Source\DCSoft.WinForms\DragRectangle.cs" />
+    <Compile Include="Source\DCSoft.WinForms\MouseClickCounter.cs" />
+    <Compile Include="Source\DCSoft.WinForms\MouseEventType.cs" />
+    <Compile Include="Source\DCSoft.WinForms\Native\MouseCapturer.cs" />
+    <Compile Include="Source\DCSoft.WinForms\WinFormUtils.cs" />
+    <Compile Include="Source\DCSoft.WinForms\XCursors.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\CanInsertObjectEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommand.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandContainer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandControler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandDelegate.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandDescriptionAttribute.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandExecuterBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\WriterCommandModule.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Commands\XTextElementProperties.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ContentChangedEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ContentChangingEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ContentEffects.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\CollectProtectedElementsEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\CommandErrorEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ContentFormatUtils.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\CustomCommandEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\DCDocumentRuleControl.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\DragOperationState.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ElementToolTip.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ElementValueEditContext.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ElementValueEditor.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ElementValueEditorEditStyle.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ElementValueEditResult.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\KeyState.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ListItemTextConverter.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\ParseSelectedItemsEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\PromptProtectedContentEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\StatusTextChangedEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\TextPageViewControl.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_Command.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_Comment.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_DOM.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_Event.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_IO.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_MouseEvent.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_Paint.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_Printing.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_ToolTips.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterControl_UI.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_Command.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_Comment.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_DOM.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_IO.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_KeyEvents.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_MouseEvent.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_Paint.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_Printing.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_ToolTips.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Controls\WriterViewControl_UI.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Data\ListItem.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Data\ListSourceInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DCBackgroundTextOutputMode.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DCBooleanValue.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DCBooleanValueHasDefault.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DCStdImageList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DCVisibleState.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DocumentBehaviorOptions.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DocumentContentSourceTypes.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DocumentEditOptions.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DocumentOptions.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\DocumentViewOptions.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\CanInsertElementEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\CharacterMeasurer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\CheckBoxGroupInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ContentProtectedInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\CurrentContentStyleInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DCTabMoveDirection.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentContentStyle.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentContentStyleContainer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentContentWriter.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentControlerSnapshot.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentPageDrawer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentRenderMode.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentStates.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DocumentViewTransform.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomAccessFlags.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomReadyStates.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomTreeNodeEnumerable.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ElementEnumerator.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ElementStack.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ElementStateDetectEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ElementType.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\FixIndexDirection.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\GetTextArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\HighlightInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\InnerDocumentPaintEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\InputFieldSettings.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\InsertElementsArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\LayoutHelper.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\MouseCaptureInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\PageLineInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\RenderBorderInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ReplaceElementsArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\RuntimeDocumentContentStyle.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\SearchStringResult.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\SelectionChangingEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\SetContainerTextArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\TableStructInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\TypedElementListBuffer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\UndoMethodTypes.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextDocumentUndoGroup.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextDocumentUndoList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoCharValue.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoHeaderRow.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoInvokeMethod.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoNameProperty.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoProperty.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoReplaceElements.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoSetDefaultFont.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoSetDocumentProperty.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoSetElementStyle.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoStyleIndex.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoStyles.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoTableColumnWidth.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\Undo\XTextUndoTableInfo.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\ValueValidateResult.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\WordCountResult.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomCharElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomCheckBoxElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomCheckBoxElementBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomContainerElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DCContent.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomContentElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DCContentRender.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocumentBodyElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocumentContentElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocumentFooterElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocumentHeaderElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocumentList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_Data.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_Edit.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_Event.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_IO.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_Layout.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_Security.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomDocument_Style.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomElementList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomEOFElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomFieldBorderElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomFieldElementBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomImageElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomInputFieldElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomInputFieldElementBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomLine.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomLineBreakElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomLineList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomObjectElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomPageBreakElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomPageInfoElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomParagraphElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomParagraphFlagElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomParagraphListItemElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomRadioBoxElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DCRange.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DCSelection.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomStringElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomTableCellElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomTableColumnElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomTableElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomTableRowElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Dom\DomTextElement.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ElementEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ElementKeyEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ElementLoadEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ElementMouseEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ElementPropertiesEditEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ElementValidatingEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\EnableState.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\FilterValueEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\FontFileManagerBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\InsertObjectEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\MoveFocusHotKeys.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\MoveUnit.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Serialization\ContentSerializeOptions.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Serialization\ContentSerializer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Serialization\Xml\MyXmlReaderPackage.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Serialization\Xml\MyXmlSerializeHelper.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Serialization\Xml\XMLContentSerializer.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Undo\IUndoable.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Undo\XUndoEventArgs.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Undo\XUndoGroup.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Undo\XUndoList.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\Undo\XUndoObjectPropertyValue.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\ValueEditorActiveMode.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterAppHost.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterConst.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterDataFormats.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterMouseEventHandler.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterResourcesCore_Static.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterToolsBase.cs" />
+    <Compile Include="Source\DCSoft.Writer.Core\WriterUtilsInner.cs" />
+    <Compile Include="Source\DCValueConvert.cs" />
+    <Compile Include="Source\DCWriterForWinForm\SVGGraphics.cs" />
+    <Compile Include="Source\DCWriterForWinForm\TypeProviders\TypeProvider_XTextDocument.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\BorderBackgroundCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\ContentSearchReplacer.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\FileOpenCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\FilePrintCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\HeaderFormatCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\InputFieldUnderLineCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\InsertDocumentCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\InsertRTFCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\InsertStringCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\MegeCellCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\ParagraphFormatCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\SearchReplaceCommandArgs.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\SplitCellExtCommandParameter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\StyleApplyRanges.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\TableCommandArgs.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandExecuter.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleBrowse.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleData.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleEdit.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleExtension.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleFile.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleFormat.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleInsert.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleTable.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\WriterCommandModuleTools.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\XTextInputFieldElementProperties.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Commands\XTextTableElementProperties.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\DefaultWriterControlProvider.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\TextWindowsFormsEditorHostClass.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\XTextInputFieldElementDateTimeValueEditor.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\XTextInputFieldElementDateValueEditor.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\XTextInputFieldElementListValueEditor.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\XTextInputFieldElementNumericValueEditor.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Controls\XTextInputFieldElementTimeValueEditor.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Data\DefaultDOMDataProvider.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Data\DefaultDOMDataProvider_Validate.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\DCTabIndexManager.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Dom\DocumentControler.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Dom\HandleDocumentEventHelper.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Dom\HighlightManager.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Serialization\DCWriterXmlSerializer.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Serialization\DCXmlSerializerBase.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Serialization\NewSerializer20220801_Custom.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Serialization\XmlSerializationReaderXTextDocument.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\Serialization\XmlSerializationWriterXTextDocument.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\StandardCommandNames.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\WriterTools.cs" />
+    <Compile Include="Source\DCWriterForWinForm\Writer\WriterUtils.cs" />
+    <Compile Include="Source\DropdownControlPosition.cs" />
+    <Compile Include="Source\HtmlKeyNames.cs" />
+    <Compile Include="Source\JavaScriptMethods.cs" />
+    <Compile Include="Source\MyPrintTaskOptions.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop.WebAssembly\InternalCalls.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop.WebAssembly\WebAssemblyJSRuntime.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\DotNetObjectReference.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\DotNetObjectReferenceOfT.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\IJSInProcessRuntime.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\IJSRuntime.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\ByteArrayJsonConverter.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\DotNetDispatcher.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\DotNetInvocationInfo.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\DotNetInvocationResult.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\DotNetObjectReferenceJsonConverter.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\DotNetObjectReferenceJsonConverterFactory.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\IDotNetObjectReference.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\IJSVoidResult.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\Infrastructure\TaskGenericsUtil.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\JSCallResultType.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\JSException.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\JSInProcessRuntime.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\JSInvokableAttribute.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\JSRuntime.cs" />
+    <Compile Include="Source\net90\Microsoft.JSInterop\JSRuntimeExtensions.cs" />
+    <Compile Include="Source\net90\MSWebAssemblyHostBuilder90.cs" />
+    <Compile Include="Source\net90\Shared\ArrayBuilder.cs" />
+    <Compile Include="Source\net90\Shared\JSCallResultTypeHelper.cs" />
+    <Compile Include="Source\net90\Shared\LinkerFlags.cs" />
+    <Compile Include="Source\Program.cs" />
+    <Compile Include="Source\PublishDateTime.cs" />
+    <Compile Include="Source\System.Imports\ArrayXmlReader.cs" />
+    <Compile Include="Source\System.Imports\DCSystemInfo.cs" />
+    <Compile Include="Source\System.Imports\System_Drawing.cs" />
+    <Compile Include="Source\System.Imports\System_Drawing_Graphics_New.cs" />
+    <Compile Include="Source\System.Imports\System_Drawing_Primitives.cs" />
+    <Compile Include="Source\System.Imports\System_Drawing_Printing.cs" />
+    <Compile Include="Source\System.Imports\System_Windows_Forms.cs" />
+    <Compile Include="Source\System.Imports\System_Windows_Forms_Control.cs" />
+    <Compile Include="Source\System.Imports\System_Windows_Forms_Ext.cs" />
+    <Compile Include="Source\System.Imports\WASMEnvironment.cs" />
+    <Compile Include="Source\System.Imports\WriterControl_WASM.cs" />
+    <Compile Include="Source\System.Imports\WriterViewControl_WASM.cs" />
+    <Compile Include="Source\System.Imports\WriterViewControl_WASMPrint.cs" />
+    <Compile Include="Source\System.Private.Xml\Common\ValueStringBuilder.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\Core\ReadState.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\Core\XmlReader.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\Core\XmlTextEncoder.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\Core\XmlTextWriter.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\Core\XmlWriter.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\NameTable.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\XmlCharType.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\XmlConvert.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\XmlException.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\XmlNameTable.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\XmlNodeType.cs" />
+    <Compile Include="Source\System.Private.Xml\System\Xml\XmlReservedNs.cs" />
+    <Compile Include="Source\TTFontFileHelper.cs" />
+    <Compile Include="Source\WASMInstanceHandleContainer.cs" />
+    <Compile Include="Source\WASMJsonConvert.cs" />
+    <Compile Include="Source\WASMStarter.cs" />
+    <Compile Include="Source\WASMUtils.cs" />
+    <Compile Include="Source\WriterControlForWASM.cs" />
+    <Compile Include="Source\WriterControlForWASM_API.cs" />
+    <Compile Include="Source\WriterControlForWASM_Clipboard.cs" />
+    <Compile Include="Source\WriterControlForWASM_Commands.cs" />
+    <Compile Include="Source\WriterControlForWASM_Document.cs" />
+    <Compile Include="Source\WriterControlForWASM_IO.cs" />
+    <Compile Include="Source\WriterControlForWASM_JavaScript.cs" />
+    <Compile Include="Source\WriterControlForWASM_Paint.cs" />
+    <Compile Include="Source\WriterControlForWASM_Print.cs" />
+    <Compile Include="Source\WriterControlForWASM_Table.cs" />
+    <Compile Include="Source\WriterControlForWASM_UI.cs" />
+  </ItemGroup>
+</Project>

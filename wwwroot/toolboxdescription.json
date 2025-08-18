@@ -1,0 +1,1164 @@
+{
+  "title": "Description of tool box",
+  "formatVersion": "1.0",
+  "mainMenus": [
+    {
+      "id": "File",
+      "text": "File",
+      "childItems": [
+        {
+          "id": "FileNew",
+          "text": "New",
+          "description": "Clear document content in current tab page.",
+          "commandName": "FileNew",
+          "icon": "new.bmp"
+        },
+        {
+          "id": "FileOpen",
+          "text": "Open...",
+          "description": "Create a new tab page and open a local file(*.xml)",
+          "commandName": "FileOpen",
+          "icon": "open.bmp"
+        },
+        {
+          "id": "FileOpenDemo",
+          "text": "Open demo file...",
+          "description": "Show a dialog list demo files and open it.",
+          "commandName": "FileOpenDemo",
+          "icon": "open.bmp"
+        },
+        {
+          "id": "FileDowload",
+          "text": "Download as xml...",
+          "description": "Download current document as xml file",
+          "commandName": "DownloadAsXml",
+          "icon": "xml.bmp"
+        },
+        {
+          "text": "-",
+          "description": "this is a spliter"
+        },
+        {
+          "id": "FilePageSettings",
+          "text": "Page settings...",
+          "description": "Open page settings dialog.",
+          "commandName": "FilePageSettings",
+          "icon": "pagesettings.bmp"
+        },
+        {
+          "id": "FilePrint",
+          "text": "Print...",
+          "description": "Print current document.",
+          "icon": "print.bmp"
+        },
+        {
+          "id": "FilePrintCurrentPage",
+          "text": "Print current page...",
+          "icon": "print.bmp"
+        },
+        {
+          "id": "FilePrintSelection",
+          "text": "Print selection...",
+          "icon": "print.bmp"
+        },
+        {
+          "text": "-",
+          "description": "this is a spliter"
+        },
+        {
+          "id": "FileClose",
+          "text": "Close document",
+          "icon": "close.bmp"
+        }
+      ]
+    }
+  ],
+  "toolBars": [
+    {
+      "id": "ToolbarStart",
+      "title": "Start",
+      "groups": [
+        {
+          "text": "File",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnOpen",
+              "text": "Open",
+              "commandName": "fileopen",
+              "icon": "Open"
+            },
+            {
+              "type": "button",
+              "id": "btnSaveXml",
+              "text": "SaveXml",
+              "commandName": "SaveXml",
+              "icon": "SaveXml"
+            },
+            {
+              "type": "button",
+              "id": "btnSavePdf",
+              "text": "Save Pdf",
+              "commandName": "SavePdf",
+              "icon": "SavePdf"
+            }
+          ]
+        },
+        {
+          "text": "Clipboard",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPaste",
+              "text": "Paste",
+              "commandName": "Paste",
+              "icon": "paste"
+            },
+            {
+              "type": "button",
+              "id": "btnCut",
+              "text": "Cut",
+              "commandName": "Cut",
+              "icon": "cut"
+            },
+            {
+              "type": "button",
+              "id": "btnCopy",
+              "text": "Copy",
+              "commandName": "Copy",
+              "icon": "copy"
+            },
+            {
+              "type": "button",
+              "id": "btnFormatBrush",
+              "text": "Format Brush",
+              "commandName": "FormatBrush",
+              "icon": "FormatBrush"
+            }
+          ]
+        },
+        {
+          "text": "Convention",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnUndo",
+              "text": "Undo",
+              "commandName": "Undo",
+              "icon": "Undo"
+            },
+            {
+              "type": "button",
+              "id": "btnRedo",
+              "text": "Redo",
+              "commandName": "Redo",
+              "icon": "Redo"
+            }
+          ]
+        },
+        {
+          "text": "Font",
+          "childItems": [
+            {
+              "type": "select",
+              "id": "btnFontName",
+              "commandName": "FontName",
+              "childItems": [
+                { "label": "宋体", "value": "宋体" },
+                { "label": "A-Himalaya", "value": "A-Himalaya" },
+                { "label": "Arial", "value": "Arial" },
+                { "label": "Arial Black", "value": "Arial Black" },
+                { "label": "Arial Narrow", "value": "Arial Narrow" },
+                {
+                  "label": "Arial Rounded MT Bold",
+                  "value": "Arial Rounded MT Bold"
+                },
+                { "label": "Calibri", "value": "Calibri" },
+                { "label": "Calibri Light", "value": "Calibri Light" },
+                { "label": "DengXian", "value": "DengXian" },
+                { "label": "等线", "value": "等线" },
+                { "label": "DengXian Light", "value": "DengXian Light" },
+                { "label": "等线 Light", "value": "等线 Light" },
+                { "label": "FangSong", "value": "FangSong" },
+                { "label": "仿宋", "value": "仿宋" },
+                { "label": "KaiTi", "value": "KaiTi" },
+                { "label": "楷体", "value": "楷体" },
+                {
+                  "label": "Microsoft Himalaya",
+                  "value": "Microsoft Himalaya"
+                },
+                {
+                  "label": "Microsoft JhengHei UI",
+                  "value": "Microsoft JhengHei UI"
+                },
+                {
+                  "label": "Microsoft JhengHei UI Light",
+                  "value": "Microsoft JhengHei UI Light"
+                },
+                {
+                  "label": "Microsoft Sans Serif",
+                  "value": "Microsoft Sans Serif"
+                },
+                { "label": "Microsoft YaHei", "value": "Microsoft YaHei" },
+                { "label": "微软雅黑", "value": "微软雅黑" },
+                {
+                  "label": "Microsoft YaHei Light",
+                  "value": "Microsoft YaHei Light"
+                },
+                { "label": "微软雅黑 Light", "value": "微软雅黑 Light" },
+                {
+                  "label": "Microsoft YaHei UI",
+                  "value": "Microsoft YaHei UI"
+                },
+                {
+                  "label": "Microsoft YaHei UI Light",
+                  "value": "Microsoft YaHei UI Light"
+                },
+                {
+                  "label": "MingLiU_HKSCS-ExtB",
+                  "value": "MingLiU_HKSCS-ExtB"
+                },
+                { "label": "細明體_HKSCS-ExtB", "value": "細明體_HKSCS-ExtB" },
+                { "label": "MingLiU-ExtB", "value": "MingLiU-ExtB" },
+                { "label": "細明體-ExtB", "value": "細明體-ExtB" },
+                { "label": "NSimSun", "value": "NSimSun" },
+                { "label": "新宋体", "value": "新宋体" },
+                { "label": "PMingLiU-ExtB", "value": "PMingLiU-ExtB" },
+                { "label": "新細明體-ExtB", "value": "新細明體-ExtB" },
+                { "label": "SimHei", "value": "SimHei" },
+                { "label": "黑体", "value": "黑体" },
+                { "label": "SimSun", "value": "SimSun" },
+                { "label": "SimSun-ExtB", "value": "SimSun-ExtB" },
+                { "label": "STCaiyun", "value": "STCaiyun" },
+                { "label": "华文彩云", "value": "华文彩云" },
+                { "label": "STFangsong", "value": "STFangsong" },
+                { "label": "华文仿宋", "value": "华文仿宋" },
+                { "label": "STHupo", "value": "STHupo" },
+                { "label": "华文琥珀", "value": "华文琥珀" },
+                { "label": "STKaiti", "value": "STKaiti" },
+                { "label": "华文楷体", "value": "华文楷体" },
+                { "label": "STLiti", "value": "STLiti" },
+                { "label": "华文隶书", "value": "华文隶书" },
+                { "label": "STSong", "value": "STSong" },
+                { "label": "华文宋体", "value": "华文宋体" },
+                { "label": "STXihei", "value": "STXihei" },
+                { "label": "华文细黑", "value": "华文细黑" },
+                { "label": "STXingkai", "value": "STXingkai" },
+                { "label": "华文行楷", "value": "华文行楷" },
+                { "label": "STXinwei", "value": "STXinwei" },
+                { "label": "华文新魏", "value": "华文新魏" },
+                { "label": "STZhongsong", "value": "STZhongsong" },
+                { "label": "华文中宋", "value": "华文中宋" },
+                { "label": "Times New Roman", "value": "Times New Roman" },
+                { "label": "Wingdings", "value": "Wingdings" },
+                { "label": "Wingdings 2", "value": "Wingdings 2" },
+                { "label": "Wingdings 3", "value": "Wingdings 3" },
+                { "label": "微軟正黑體", "value": "微軟正黑體" },
+                {
+                  "label": "Microsoft JhengHei",
+                  "value": "Microsoft JhengHei"
+                },
+                { "label": "微軟正黑體 Light", "value": "微軟正黑體 Light" },
+                {
+                  "label": "Microsoft JhengHei Light",
+                  "value": "Microsoft JhengHei Light"
+                },
+                { "label": "FangSong_GB2312", "value": "FangSong_GB2312" },
+                { "label": "仿宋_GB2312", "value": "仿宋_GB2312" },
+                {
+                  "label": "书体坊向佳红毛笔行书",
+                  "value": "书体坊向佳红毛笔行书"
+                },
+                { "label": "Arial Unicode MS", "value": "Arial Unicode MS" }
+              ]
+            },
+            {
+              "type": "select",
+              "id": "btnFontSize",
+              "commandName": "FontSize",
+              "childItems": [
+                { "label": "大特号", "value": "63" },
+                { "label": "特号", "value": "54" },
+                { "label": "初号", "value": "42" },
+                { "label": "小初", "value": "36" },
+                { "label": "一号", "value": "26.25" },
+                { "label": "小一", "value": "24" },
+                { "label": "二号", "value": "21.75" },
+                { "label": "小二", "value": "18" },
+                { "label": "三号", "value": "15.75" },
+                { "label": "小三", "value": "15" },
+                { "label": "四号", "value": "14.25" },
+                { "label": "小四", "value": "12" },
+                { "label": "五号", "value": "10.5" },
+                { "label": "小五", "value": "9" },
+                { "label": "六号", "value": "7.5" },
+                { "label": "小六", "value": "6.75" },
+                { "label": "七号", "value": "5.25" },
+                { "label": "八号", "value": "4.5" },
+                { "label": "8", "value": "8" },
+                { "label": "9", "value": "9" },
+                { "label": "10", "value": "10" },
+                { "label": "11", "value": "11" },
+                { "label": "12", "value": "12" },
+                { "label": "14", "value": "14" },
+                { "label": "16", "value": "16" },
+                { "label": "18", "value": "18" },
+                { "label": "20", "value": "20" },
+                { "label": "22", "value": "22" },
+                { "label": "24", "value": "24" },
+                { "label": "26", "value": "26" },
+                { "label": "28", "value": "28" },
+                { "label": "36", "value": "36" },
+                { "label": "48", "value": "48" },
+                { "label": "72", "value": "72" }
+              ]
+            },
+            {
+              "type": "br",
+              "id": "",
+              "commandName": "",
+              "childItems": null
+            },
+            {
+              "type": "button",
+              "id": "btnBold",
+              "text": "Bold",
+              "commandName": "Bold",
+              "icon": "Bold"
+            },
+            {
+              "type": "button",
+              "id": "btnitalic",
+              "text": "Italic",
+              "commandName": "Italic",
+              "icon": "Italic"
+            },
+            {
+              "type": "button",
+              "id": "btnUnderLine",
+              "text": "Under Line",
+              "commandName": "Underline",
+              "icon": "UnderLine"
+            },
+            {
+              "type": "button",
+              "id": "btnStrikethrough",
+              "text": "Strikeout",
+              "commandName": "Strikeout",
+              "icon": "Strikethrough"
+            },
+            {
+              "type": "colorPicker",
+              "id": "btnFontColor",
+              "text": "Font Color",
+              "commandName": "ColorString",
+              "icon": "FontColor"
+            },
+            {
+              "type": "colorPicker",
+              "id": "btnFontBackgroundColor",
+              "text": "Font Background Color",
+              "commandName": "BackgroundColorString",
+              "icon": "FontBackgroundColor"
+            },
+            {
+              "type": "button",
+              "id": "btnSuperscript",
+              "text": "Superscript",
+              "commandName": "Superscript",
+              "icon": "Superscript"
+            },
+            {
+              "type": "button",
+              "id": "btnSubscript",
+              "text": "Subscript",
+              "commandName": "Subscript",
+              "icon": "Subscript"
+            },
+            {
+              "type": "button",
+              "id": "btnFontborder",
+              "text": "Font border",
+              "commandName": "Fontborder",
+              "icon": "Fontborder"
+            },
+            {
+              "type": "button",
+              "id": "btnCharacterCircle",
+              "text": "Character Circle",
+              "commandName": "CharacterCircle",
+              "icon": "CharacterCircle"
+            }
+          ]
+        },
+        {
+          "text": "Paragraph",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnAlignLeft",
+              "text": "Align Left",
+              "commandName": "AlignLeft",
+              "icon": "AlignLeft"
+            },
+            {
+              "type": "button",
+              "id": "btnAlignCenter",
+              "text": "Align Center",
+              "commandName": "AlignCenter",
+              "icon": "AlignCenter"
+            },
+            {
+              "type": "button",
+              "id": "btnAlignRight",
+              "text": "Align Right",
+              "commandName": "AlignRight",
+              "icon": "AlignRight"
+            },
+            {
+              "type": "button",
+              "id": "btnAlignDistribute",
+              "text": "Align Distribute",
+              "commandName": "AlignDistribute",
+              "icon": "AlignDistribute"
+            },
+            {
+              "type": "button",
+              "id": "btninsertorderedlist",
+              "text": "Insert Ordered List",
+              "commandName": "insertorderedlist",
+              "icon": "insertorderedlist"
+            },
+            {
+              "type": "button",
+              "id": "btninsertunorderedlist",
+              "text": "Insert Unordered List",
+              "commandName": "insertunorderedlist",
+              "icon": "insertunorderedlist"
+            },
+            {
+              "type": "br",
+              "id": "",
+              "text": "",
+              "commandName": "",
+              "icon": ""
+            },
+            {
+              "type": "button",
+              "id": "btnIndent",
+              "text": "Increase Indent",
+              "commandName": "Indent",
+              "icon": "Indent"
+            },
+            {
+              "type": "button",
+              "id": "btnLeftIndent",
+              "text": "Decrease Indent",
+              "commandName": "LeftIndent",
+              "icon": "LeftIndent"
+            },
+            {
+              "type": "dropdownList",
+              "id": "btnlineSpacing",
+              "text": "Line Space",
+              "commandName": "lineSpacing",
+              "icon": "lineSpacing",
+              "childItems": [
+                "1",
+                "1.2",
+                "1.5",
+                "1.7",
+                "2",
+                "2.2",
+                "2.5",
+                "3",
+                "<hr/>",
+                "Remove Before Spacing",
+                "Remove After Spacing"
+              ]
+            },
+            {
+              "type": "button",
+              "id": "btnrowspacingTop",
+              "text": "Space Before Paragraph",
+              "commandName": "rowspacingTop",
+              "icon": "rowspacingTop"
+            },
+            {
+              "type": "button",
+              "id": "btnrowspacingBottom",
+              "text": "Space After Paragraph",
+              "commandName": "rowspacingBottom",
+              "icon": "rowspacingBottom"
+            }
+          ]
+        },
+        {
+          "text": "Style",
+          "childItems": [
+            {
+              "type": "fontStyle",
+              "id": "btnfontStyle",
+              "text": "Font Style",
+              "commandName": "fontStyle",
+              "icon": "fontStyle",
+              "childItems": [
+                {
+                  "label": "bodyText",
+                  "value": 14,
+                  "fontSize": 14,
+                  "fontWeight": 100
+                },
+                {
+                  "label": "header1",
+                  "value": 24,
+                  "fontSize": 24,
+                  "fontWeight": 700
+                },
+                {
+                  "label": "header2",
+                  "value": 22,
+                  "fontSize": 22,
+                  "fontWeight": 700
+                },
+                {
+                  "label": "header3",
+                  "value": 20,
+                  "fontSize": 20,
+                  "fontWeight": 700
+                },
+                {
+                  "label": "header4",
+                  "value": 18,
+                  "fontSize": 18,
+                  "fontWeight": 700
+                },
+                {
+                  "label": "header5",
+                  "value": 16,
+                  "fontSize": 16,
+                  "fontWeight": 700
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Mode",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnReadonly",
+              "text": "Read Only View Mode",
+              "commandName": "Readonly",
+              "icon": "Readonly"
+            },
+            {
+              "type": "button",
+              "id": "btnReadViewMode",
+              "text": "Read View Mode",
+              "commandName": "ReadViewMode",
+              "icon": "ReadViewMode"
+            },
+            {
+              "type": "button",
+              "id": "btnAdministratorViewMode",
+              "text": "Administrator View Mode",
+              "commandName": "AdministratorViewMode",
+              "icon": "AdministratorViewMode"
+            }
+          ]
+        },
+        {
+          "text": "Layout",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnSingleColumn",
+              "text": "Single Column",
+              "commandName": "SingleColumn",
+              "icon": "SingleColumn"
+            },
+            {
+              "type": "button",
+              "id": "btnMultiColumn",
+              "text": "Multi Column",
+              "commandName": "MultiColumn",
+              "icon": "MultiColumn"
+            },
+            {
+              "type": "button",
+              "id": "btnHorizontal",
+              "text": "Horizontal",
+              "commandName": "Horizontal",
+              "icon": "Horizontal"
+            }
+          ]
+        },
+
+        {
+          "text": "Find",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnSearch",
+              "text": "Search",
+              "commandName": "Search",
+              "icon": "Search"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ToolBarInsert",
+      "title": "Insert",
+      "groups": [
+        {
+          "text": "File",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnInputFileText",
+              "text": "Input",
+              "commandName": "InputFileText",
+              "icon": "InputFileText"
+            },
+            {
+              "type": "button",
+              "id": "btnInputFileTime",
+              "text": "Time",
+              "commandName": "InputFileTime",
+              "icon": "InputFileTime"
+            },
+            {
+              "type": "button",
+              "id": "btnInputFileSelect",
+              "text": "Select",
+              "commandName": "InputFileSelect",
+              "icon": "InputFileSelect"
+            },
+            {
+              "type": "button",
+              "id": "btnInputFileNumber",
+              "text": "Number",
+              "commandName": "InputFileNumber",
+              "icon": "InputFileNumber"
+            }
+          ]
+        },
+
+        {
+          "text": "Check",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnRadioBox",
+              "text": "Radio box",
+              "commandName": "RadioBox",
+              "icon": "RadioBox"
+            },
+            {
+              "type": "button",
+              "id": "btncheckBox",
+              "text": "Check box",
+              "commandName": "checkBox",
+              "icon": "checkBox"
+            }
+          ]
+        },
+
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnImage",
+              "text": "Image",
+              "commandName": "Image",
+              "icon": "Image"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnpagebreak",
+              "text": "Page Break",
+              "commandName": "Pagebreak",
+              "icon": "Pagebreak"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPageIndex",
+              "text": "Page Index",
+              "commandName": "PageIndex",
+              "icon": "PageIndex"
+            }
+          ]
+        },
+
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnSpecifyCharacter",
+              "text": "Special characters",
+              "commandName": "SpecifyCharacter",
+              "icon": "SpecifyCharacter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ToolBarTable",
+      "title": "Table",
+      "groups": [
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnInsertTable",
+              "text": "Insert Table",
+              "commandName": "InsertTable",
+              "icon": "Table"
+            },
+            {
+              "type": "button",
+              "id": "btnDeleteTable",
+              "text": "Delete Table",
+              "commandName": "DeleteTable",
+              "icon": "DeleteTable"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnMergeCells",
+              "text": "Merge Cells",
+              "commandName": "MergeCells",
+              "icon": "MergeCells"
+            },
+            {
+              "type": "button",
+              "id": "btnSplitCells",
+              "text": "Split Cells",
+              "commandName": "SplitCells",
+              "icon": "SplitCells"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnTableBorder",
+              "text": "Table Border",
+              "commandName": "TableBorder",
+              "icon": "TableBorder"
+            }
+          ]
+        },
+        {
+          "text": "Row And Column",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnInsertRowAbove",
+              "text": "Insert Row Above",
+              "commandName": "Table_InsertRowUp",
+              "icon": "InsertRowAbove"
+            },
+            {
+              "type": "button",
+              "id": "btnInsertRowBelow",
+              "text": "Insert Row Below",
+              "commandName": "Table_InsertRowDown",
+              "icon": "InsertRowBelow"
+            },
+            {
+              "type": "button",
+              "id": "btnInsertColumnLeft",
+              "text": "Insert Column Left",
+              "commandName": "Table_InsertColumnLeft",
+              "icon": "InsertColumnLeft"
+            },
+            {
+              "type": "button",
+              "id": "btnInsertColumnRight",
+              "text": "Insert Column Right",
+              "commandName": "Table_InsertColumnRight",
+              "icon": "InsertColumnRight"
+            }
+          ]
+        },
+        {
+          "text": "Delete",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnDeleteRow",
+              "text": "Delete Row",
+              "commandName": "Table_DeleteRow",
+              "icon": "DeleteRow"
+            },
+            {
+              "type": "button",
+              "id": "btnDeleteColumn",
+              "text": "Delete Column",
+              "commandName": "Table_DeleteColumn",
+              "icon": "DeleteColumn"
+            }
+          ]
+        },
+        {
+          "text": "Align",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnCellTopLeft",
+              "text": "Align Top Left",
+              "commandName": "AlignTopLeft",
+              "icon": "CellTopLeft"
+            },
+            {
+              "type": "button",
+              "id": "btnCellTopMiddle",
+              "text": "Align Top Center",
+              "commandName": "AlignTopCenter",
+              "icon": "CellTopMiddle"
+            },
+            {
+              "type": "button",
+              "id": "btnCellTopRight",
+              "text": "Align Top Right",
+              "commandName": "AlignTopRight",
+              "icon": "CellTopRight"
+            },
+            {
+              "type": "button",
+              "id": "btnCellBottomLeft",
+              "text": "Align Bottom Left",
+              "commandName": "AlignBottomLeft",
+              "icon": "CellBottomLeft"
+            },
+            {
+              "type": "button",
+              "id": "btnCellBottomMiddle",
+              "text": "Align Bottom Center",
+              "commandName": "AlignBottomCenter",
+              "icon": "CellBottomMiddle"
+            },
+            {
+              "type": "button",
+              "id": "btnCellBottomRight",
+              "text": "Align Bottom Right",
+              "commandName": "AlignBottomRight",
+              "icon": "CellBottomRight"
+            },
+            {
+              "type": "button",
+              "id": "btnCellCenterLeft",
+              "text": "Align Middle Left",
+              "commandName": "AlignMiddleLeft",
+              "icon": "CellCenterLeft"
+            },
+            {
+              "type": "button",
+              "id": "btnCellCenterMiddle",
+              "text": "Align Middle Center",
+              "commandName": "AlignMiddleCenter",
+              "icon": "CellCenterMiddle"
+            },
+            {
+              "type": "button",
+              "id": "btnCellCenterRight",
+              "text": "Align Middle Right",
+              "commandName": "AlignMiddleRight",
+              "icon": "CellCenterRight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ToolBarPrintView",
+      "title": "Print",
+      "groups": [
+        {
+          "text": "Print",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPrint",
+              "text": "All Print",
+              "commandName": "Print",
+              "icon": "Print"
+            }
+          ]
+        },
+        {
+          "text": "Preview",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPrintPreview",
+              "text": "Print Preview",
+              "commandName": "PrintPreview",
+              "icon": "PrintPreview"
+            }
+          ]
+        },
+        {
+          "text": "Close Preview",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnClosePrintPreview",
+              "text": "Close Preview",
+              "commandName": "ClosePrintPreview",
+              "icon": "ClosePrintPreview"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPrintPreviewCurrentPage",
+              "text": "Print Preview Current Page",
+              "commandName": "PrintPreviewCurrentPage",
+              "icon": "PrintPreviewCurrentPage"
+            },
+            {
+              "type": "button",
+              "id": "btnPrintCurrentPage",
+              "text": "Print Current Page",
+              "commandName": "PrintCurrentPage",
+              "icon": "PrintCurrentPage"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPrintPageNumberbtn",
+              "text": "Print Page Number",
+              "commandName": "PrintPageNumberbtn",
+              "icon": "PrintPageNumberbtn"
+            },
+            {
+              "type": "button",
+              "id": "btnPrintTheSpecifiedPage",
+              "text": "Print the specified page",
+              "commandName": "PrintTheSpecifiedPage",
+              "icon": "PrintTheSpecifiedPage"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "childItems": [
+            {
+              "type": "button",
+              "id": "btnPrintOddPages",
+              "text": "Print Odd Pages",
+              "commandName": "PrintOddPages",
+              "icon": "PrintOddPages"
+            },
+            {
+              "type": "button",
+              "id": "btnPrintEvenPages",
+              "text": "Print Even Pages",
+              "commandName": "PrintEvenPages",
+              "icon": "PrintEvenPages"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ContextMenus": [
+    {
+      "elementType": "All",
+      "id": "cmUndo",
+      "text": "Undo",
+      "commandName": "Undo",
+      "icon": "undo.bmp"
+    },
+    {
+      "elementType": "All",
+      "id": "cmRedo",
+      "text": "Redo",
+      "commandName": "Redo",
+      "icon": "redo.bmp"
+    },
+    {
+      "text": "-",
+      "description": "this is a spliter"
+    },
+    {
+      "elementType": "All",
+      "id": "cmCopy",
+      "text": "Copy",
+      "commandName": "Copy",
+      "icon": "copy.bmp"
+    },
+    {
+      "elementType": "All",
+      "id": "cmPaste",
+      "text": "Paste",
+      "commandName": "Paste",
+      "icon": "paste.bmp"
+    },
+    {
+      "elementType": "All",
+      "id": "cmCut",
+      "text": "Cut",
+      "commandName": "Cut",
+      "icon": "cut.bmp"
+    },
+    {
+      "elementType": "All",
+      "id": "cmCopyAsText",
+      "text": "Copyt as text",
+      "commandName": "CopyAsText",
+      "icon": "copy.bmp"
+    },
+    {
+      "elementType": "All",
+      "id": "cmPasteAsText",
+      "text": "Paste as text",
+      "commandName": "PasteAsText",
+      "icon": "paste.bmp"
+    },
+    {
+      "text": "-",
+      "description": "this is a spliter"
+    },
+    {
+      "elementType": "DCInputFieldElement",
+      "id": "cmInputFieldProperties",
+      "text": "Field properties",
+      "commandName": "InputFieldProperties",
+      "icon": "properties.bmp"
+    },
+    {
+      "elementType": "DCImageElement",
+      "id": "cmImageProperties",
+      "text": "Image properties",
+      "commandName": "ImageProperties",
+      "icon": "properties.bmp"
+    },
+    {
+      "elementType": "DCCheckBoxElement",
+      "id": "cmCheckBoxProperties",
+      "text": "Checkbox properties",
+      "commandName": "CheckBoxProperties",
+      "icon": "properties.bmp"
+    },
+    {
+      "elementType": "DCRadioBoxElement",
+      "id": "cmRadioProperties",
+      "text": "Radio properties",
+      "commandName": "RadioProperties",
+      "icon": "properties.bmp"
+    },
+    {
+      "elementType": "DCPageInfoElement",
+      "id": "cmPageInfoProperties",
+      "text": "PageInfo properties",
+      "commandName": "PageInfoProperties",
+      "icon": "properties.bmp"
+    },
+    {
+      "text": "-"
+    },
+    {
+      "elementType": "DCTableElement",
+      "id": "cmTableProperties",
+      "text": "Table properties",
+      "commandName": "TableProperties",
+      "icon": "table.bmp"
+    },
+    {
+      "elementType": "DCTableRowElement",
+      "id": "cmTableRowProperties",
+      "text": "Table row properties",
+      "commandName": "TableRowProperties",
+      "icon": "tablerow.bmp"
+    },
+    {
+      "elementType": "DCTableCellElement",
+      "id": "cmTableCellProperties",
+      "text": "Table cell properties",
+      "commandName": "TableCellProperties",
+      "icon": "tablecell.bmp"
+    },
+    {
+      "text": "-"
+    },
+    {
+      "elementType": "DCTableCellElement",
+      "text": "Table row and column",
+      "childItems": [
+        {
+          "elementType": "DCTableCellElement",
+          "id": "cmDeleteRow",
+          "text": "Delete row",
+          "commandName": "Table_DeleteRow"
+        },
+        {
+          "elementType": "DCTableCellElement",
+          "id": "cmDeleteColumn",
+          "text": "Delete column",
+          "commandName": "Table_DeleteColumn"
+        },
+        {
+          "text": "-"
+        },
+        {
+          "elementType": "DCTableCellElement",
+          "id": "cmInsertRowUp",
+          "text": "Insert row at up",
+          "commandName": "Table_InsertRowUp"
+        },
+        {
+          "elementType": "DCTableCellElement",
+          "id": "cmInsertRowDown",
+          "text": "Insert row at down",
+          "commandName": "Table_InsertRowDown"
+        },
+        {
+          "elementType": "DCTableCellElement",
+          "id": "cmInsertColumnLeft",
+          "text": "Insert column at left",
+          "commandName": "Table_InsertColumnLeft"
+        },
+        {
+          "elementType": "DCTableCellElement",
+          "id": "cmInsertColumnRight",
+          "text": "Insert column at right",
+          "commandName": "Table_InsertColumnRight"
+        }
+      ]
+    }
+  ]
+}
