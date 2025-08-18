@@ -42,43 +42,41 @@ August 18, 2025
 ## Programmable DOM API Interface
 Provides a tree-like DOM model to represent all the content in the document. And provides the following DOM document element types.
 - XTextDocument Document element
-- Represents the root node of the document and is the entry point for DOM tree operations.
+  - Represents the root node of the document and is the entry point for DOM tree operations.
 - XTextContainerElement Container element, an abstract class, the base class for all container elements.
-- Can contain other elements.
+  - Can contain other elements.
 - XTextImageElement Image element
-- Can freely drag to set the size of the image
-- Only supports JPG, PNG, BMP formats.
+  - Can freely drag to set the size of the image
+  - Only supports JPG, PNG, BMP formats.
 - XTextInputFieldElement Input field element
-- Input field highlighted display
-- Set border text
-- Set background text
-- Set the label text before and the unit text after
-- Content validation, including required fields, maximum value, minimum value, etc.
+  - Input field highlighted display
+  - Set background text
+  - Content validation, including required fields, maximum value, minimum value, etc.
 - XTextLineBreakElement Line break element
-- Text performs a soft return but does not apply paragraph spacing settings.
+  - Text performs a soft return but does not apply paragraph spacing settings.
 - XTextPageBreakElement Page break element
-- Can cause forced page breaks
+  - Can cause forced page breaks
 - XTextPageInfoElement Page number element
-- Can display page numbers or total page numbers
+  - Can display page numbers or total page numbers
 - XTextParagraphFlagElement Paragraph flag element
-- Can be set as the first-line indent of a paragraph
-- Can be set as the hanging indent of a paragraph
-- Can be set as the alignment of a paragraph (left, center, right, justified)
-- Can set the line spacing and paragraph spacing of a paragraph
-- Can set numbered lists and bullet lists
+  - Can be set as the first-line indent of a paragraph
+  - Can be set as the hanging indent of a paragraph
+  - Can be set as the alignment of a paragraph (left, center, right, justified)
+  - Can set the line spacing and paragraph spacing of a paragraph
+  - Can set numbered lists and bullet lists
 - XTextTableElement Table element
-- Table header row
-- Merge and split cells
-- Set the height of table rows and the width of table columns by dragging with the mouse
-- Set forced page breaks for table rows
-- Set table rows as non-cross-page (cannot be split by page breaks)
+  - Table header row
+  - Merge and split cells
+  - Set the height of table rows and the width of table columns by dragging with the mouse
+  - Set forced page breaks for table rows
+  - Set table rows as non-cross-page (cannot be split by page breaks)
 - XTextCheckBoxElement/XTextRadioElement Check box/Radio button element
-- Can be set as selected state - Can be set to non-editable status
-- Can be set to required status
-- Multi-line text 
+  - Can be set as selected state - Can be set to non-editable status
+  - Can be set to required status
+  - Multi-line text 
 
 # DCWriter Business Edition Feature List 
-DCWriter Business Edition adds the following features on the basis of the open-source version:
+ DCWriter Business Edition adds the following features on the basis of the open-source version:
 ## Runtime Environment
 - Supports Blazor WASM 7.0/8.0/9.0 to support lower-version browsers.
 ## File Operations
@@ -139,66 +137,68 @@ DCWriter Business Edition adds the following features on the basis of the open-s
 ## Enhanced DOM Structure
 Compared to the open-source version, the commercial version enhances the DOM model:
 - XTextImageElement Image Element
-- Can set the image to float above or below the text.
-- Can set text to wrap around the image.
+  - Can set the image to float above or below the text.
+  - Can set text to wrap around the image.
 - XTextLabelElement Text Label Element
-- Can be set to automatically calculate size.
-- Can be set as multi-line text.
-- Text alignment (left, center, right)
+  - Can be set to automatically calculate size.
+  - Can be set as multi-line text.
+  - Text alignment (left, center, right)
 - XTextButtonElement Button Element
-- Can set the button text.
-- Can set the button color.
-- Can set the button size.
+  - Can set the button text.
+  - Can set the button color.
+  - Can set the button size.
 - XTextHorizontalLineElement Horizontal Line Element
-- Can set the thickness and color of the line.
+  - Can set the thickness and color of the line.
 - XTextContainerElement Container Element
-- Can set the maximum allowed length of input text.
-- Can set the allowed character set (e.g., only allowing numbers, letters, etc.).
+  - Can set the maximum allowed length of input text.
+  - Can set the allowed character set (e.g., only allowing numbers, letters, etc.).
 - XTextInputFieldElement Input Field Element
-- Set the color of the background text.
-- Set the text color.
-- Display small buttons based on data type.
-- Display a small square in the lower right corner to indicate the status.
-- XTextButtonElement Button Element
-- Can set different images to be displayed when the mouse is pressed and released.
+  - Set border text
+  - Set the label text before and the unit text after
+  - Set the color of the background text.
+  - Set the text color.
+  - Display small buttons based on data type.
+  - Display a small square in the lower right corner to indicate the status.
+  - XTextButtonElement Button Element
+  - Can set different images to be displayed when the mouse is pressed and released.
 - XTextPageInfoElement Page Number Element
-- Page numbers can be formatted (Arabic numerals, Roman numerals, uppercase Roman numerals).
-- The starting value of page numbers can be set.
-- A formatted string can be set to display the page number and total number of pages in a page number element.
+  - Page numbers can be formatted (Arabic numerals, Roman numerals, uppercase Roman numerals).
+  - The starting value of page numbers can be set.
+  - A formatted string can be set to display the page number and total number of pages in a page number element.
 - XTextCheckBoxElement/XTextRadioElement: checkbox/radio button elements.
-- Text can be set to flow layout.
-- Text can be placed to the left or right of the checkbox.
-- Data source binding is supported.
-- Check history can be recorded.
+  - Text can be set to flow layout.
+  - Text can be placed to the left or right of the checkbox.
+  - Data source binding is supported.
+  - Check history can be recorded.
 - XTextImageElement: image element.
-- More image formats are supported.
-- Images can be loaded from URLs.
+  - More image formats are supported.
+  - Images can be loaded from URLs.
 - XTextNewBarcodeElement: one-dimensional barcode element.
-- Text content can be displayed below the barcode.
+  - Text content can be displayed below the barcode.
 - XTextSectionElement: document section element.
 - XTextSubDocumentElement: subdocument element.
 - XTextTDBarcodeElement: two-dimensional barcode element.
-- The content of the QR code can be set.
-- The size of the QR code can be set.
-- The error correction level of the QR code can be set (L, M, Q, H).
+  - The content of the QR code can be set.
+  - The size of the QR code can be set.
+  - The error correction level of the QR code can be set (L, M, Q, H).
 - XTextChartElement: chart element.
-- The type of the chart can be set (bar chart, line chart, pie chart, etc.).
-- The data source of the chart can be set.
-- The style and color of the chart can be set.
+  - The type of the chart can be set (bar chart, line chart, pie chart, etc.).
+  - The data source of the chart can be set.
+  - The style and color of the chart can be set.
 - XTextPieElement: pie chart element.
-- The sector colors of the pie chart can be set.
-- The label text of the pie chart can be set.
+  - The sector colors of the pie chart can be set.
+  - The label text of the pie chart can be set.
 - XTextDirectoryFieldElement: directory field element.
-- The title text of the directory can be set.
-- The depth of the directory hierarchy can be set.
+  - The title text of the directory can be set.
+  - The depth of the directory hierarchy can be set.
 - XTextControlHostElement: control host element.
-- User-defined HTML elements can be embedded.
+  - User-defined HTML elements can be embedded.
 - XTextMediaElement: media element.
-- Video and audio files can be embedded.
+  - Video and audio files can be embedded.
 - XTextNewBarcodeElement: one-dimensional barcode element.
-- The type of the barcode can be set (Code128, Code39, EAN13, UPC, etc.).
-- The content of the barcode can be set.
-- The size of the barcode can be set.
+  - The type of the barcode can be set (Code128, Code39, EAN13, UPC, etc.).
+  - The content of the barcode can be set.
+  - The size of the barcode can be set.
 
 =====================================
 
@@ -256,9 +256,7 @@ Compared to the open-source version, the commercial version enhances the DOM mod
       - 只支持JPG\PNG\BMP格式。
  - XTextInputFieldElement 输入域元素
       - 输入域高亮度显示
-      - 设置边框文本
       - 设置背景文本
-      - 设置前置的标签文本和后置的单位文本
       - 内容校验，包括必填项、最大值、最小值等。
  - XTextLineBreakElement 换行元素
       - 文本进行软回车，但不应用段落间距的设置。
@@ -367,6 +365,8 @@ Compared to the open-source version, the commercial version enhances the DOM mod
       - 可以设置最大允许的输入的文本长度。
       - 可以设置允许输入的字符集（如仅允许输入数字、字母等）。
  - XTextInputFieldElement 输入域元素
+      - 设置边框文本
+      - 设置前置的标签文本和后置的单位文本
       - 设置背景文本的颜色
       - 设置文本颜色
       - 根据数据类型显示小按钮
