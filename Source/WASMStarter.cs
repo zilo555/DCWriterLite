@@ -155,7 +155,7 @@ namespace DCSoft.WASM
 
             DCSoft.Writer.Dom.CharacterMeasurer.StdSize10FontInfo.VoidMethod();
             DCSoft.Writer.Controls.DCDocumentRuleControl.CheckResourceImage();
-            DCConsole.Default.WriteLine("DCWriter5启动耗时" + (DateTime.Now - startTick99).TotalMilliseconds + "毫秒，版本:" +  DCSystemInfo.PublishDateString );
+            DCConsole.Default.WriteLine("DCWriter5 loaded,span " + (DateTime.Now - startTick99).TotalMilliseconds + " milliseconds,version:" +  DCSystemInfo.PublishDateString );
         }
     }
 }

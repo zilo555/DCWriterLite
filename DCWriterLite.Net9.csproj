@@ -20,7 +20,7 @@
     <DebuggerSupport>false</DebuggerSupport>
     <HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
     <!--<UseSystemResourceKeys>true</UseSystemResourceKeys>-->
-    <WasmEnableWebcil>false</WasmEnableWebcil>
+    <WasmEnableWebcil>true</WasmEnableWebcil>
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
     <SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
 	  <BlazorWebAssemblyJSPath>Source/net90/blazor.webassembly.js</BlazorWebAssemblyJSPath>

@@ -1803,7 +1803,7 @@ namespace DCSoft.Writer.NewSerializationNoStringEncrypt
                 }
                 else
                 {
-                    DCConsole.Default.WriteLineError("不支持的XML元素:" + xsiType);
+                    DCConsole.Default.WriteLineError(DCSR.NotSupportedXmlNode + xsiType);
                     ThisReader.Skip();
                     return null;
                 }

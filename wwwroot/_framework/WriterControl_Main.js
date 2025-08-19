@@ -27,15 +27,22 @@ export let WriterControl_Main = {
                 json);
         };
         // 定义标准的字符串资源
-        window.__DCSR = {
-            "Waitting":"请稍候...",
+        /*window.__DCSR = {
+            "NotSupportedFileFormat": "不支持的文件格式:",
+            "MillisecondsForLoadDocument": "加载文档耗时毫秒数:",
+            "NotSupportedXmlNode": "不支持的XML节点:",
+            "LoadFontData": "加载字体信息: ",
+            "ControlDisposed_ID": "DCWriter控件{0}被销毁了.",
+            "BeginLoadWriterControlForWASM": "开始加载 WriterControlForWASM：",
+            "EndLoadWriterControlForWASM": "WriterControlForWASM 初始化耗时",
+            "Waitting": "请稍候...",
             "AllFileFilter": "所有文件|*.*",
-            "ArgumentOutOfRange_Name_Value_Max_Min": "参数“{0}”值为“{1}”，超出范围，最大值“{2}”，最小值“{3}”。",
+            "ArgumentOutOfRange_Name_Value_Max_Min": "参数'{0}'值为'{1}'，超出范围，最大值'{2}'，最小值'{3}'。",
             "ButtonNewText": "按钮",
             "By": "由",
-            "CheckRequired_Name": "单/复选框组“{0}”必须有勾选项。",
+            "CheckRequired_Name": "单/复选框组'{0}'必须有勾选项。",
             "ClipboardErrorMessage": " 可能是360等安全软件实时监控系统剪切板所造成的。",
-            "DeleteElement_Content": "删除”{0}“",
+            "DeleteElement_Content": "删除'{0}'",
             "DeleteElements_Count": "删除{0}个元素",
             "EditControlReadonly": "编辑器控件是只读的。",
             "ElementType_Body": "文档正文",
@@ -63,10 +70,10 @@ export let WriterControl_Main = {
             "Footer": "页脚",
             "ForbidEmpty": "数据不能为空。",
             "Header": "页眉",
-            "IDRepeat_ID": "发现重复的元素ID值“{0}”。",
-            "InsertElement_Content": "插入“{0}”",
+            "IDRepeat_ID": "发现重复的元素ID值'{0}'。",
+            "InsertElement_Content": "插入'{0}'",
             "InsertElements_Count": "插入{0}个元素",
-            "InvalidateCommandName_Name_SimiliarNames": "错误的命令“{0}”，系统支持类似的命令有“{1}”",
+            "InvalidateCommandName_Name_SimiliarNames": "错误的命令'{0}'，系统支持类似的命令有'{1}'",
             "InvalidatePageSettings": "无效的页面设置，请仔细调整文档页面设置。",
             "Items_Count": "有{0}个项目。",
             "LabelNewText": "标签文本",
@@ -74,8 +81,8 @@ export let WriterControl_Main = {
             "LessThanMinValue_Value": "小于最小值 {0}。",
             "LineInfo_PageIndex_LineIndex_ColumnIndex": "第{0}页 第{1}行 第{2}列。",
             "LoadComplete_Size": "加载完成，共加载了{0}。",
-            "Loading_FileName_Format": "正在以 {1} 格式加载文件“{0}”...",
-            "MissProperty_Name": "没能找到属性“{0}”。",
+            "Loading_FileName_Format": "正在以 {1} 格式加载文件'{0}'...",
+            "MissProperty_Name": "没能找到属性'{0}'。",
             "MoreThanMaxDemicalDigits": "小数位数超过上限，上限为{0}。",
             "MoreThanMaxLength_Length": "文本过长，不得超过 {0} 个字符。",
             "MoreThanMaxValue_Value": "超过最大值 {0}。",
@@ -87,10 +94,10 @@ export let WriterControl_Main = {
             "NeedSetOwnerDocument": "需要首先设置OwnerDocument属性值。",
             "NoDocument": "无文档。",
             "NoImage": "没有图片",
-            "NotSupportInThisVersion_Name": "当前版本不支持功能“{0}”。",
-            "NotSupportSerializeText_Format": "不支持以纯文本格式存储为“{0}”文件格式。",
-            "NotSupportSerialize_Format": "不支持以“{0}”格式进行存储。",
-            "NotSupportWrite_Format": "不支持保存“{0}”格式的文件。",
+            "NotSupportInThisVersion_Name": "当前版本不支持功能'{0}'。",
+            "NotSupportSerializeText_Format": "不支持以纯文本格式存储为'{0}'文件格式。",
+            "NotSupportSerialize_Format": "不支持以'{0}'格式进行存储。",
+            "NotSupportWrite_Format": "不支持保存'{0}'格式的文件。",
             "OwnerDocumentNUll": "文档元素尚未属于某个文档，无法执行操作。",
             "PageBottomMargin": "下页边距",
             "PageBreak": "分页符",
@@ -104,9 +111,9 @@ export let WriterControl_Main = {
             "PromptJumpStartForSearch": "已到达文档的结尾处，是否继续从开始处搜索？",
             "PromptMaxTextLengthForPaste_Length": "系统设置为粘贴或插入内容时不能接收超过{0}个字符。",
             "PromptProtectedContent": "有内容受到保护，操作受到限制或无法执行。",
-            "PromptRejectFormat_Format": "系统被设定为拒绝“{0}”格式的数据。",
-            "PropertyCannotHasParameter_Name": "属性“{0}”不能有参数。",
-            "PropertyIsReadonly_Name": "属性“{0}”是只读的。",
+            "PromptRejectFormat_Format": "系统被设定为拒绝'{0}'格式的数据。",
+            "PropertyCannotHasParameter_Name": "属性'{0}'不能有参数。",
+            "PropertyIsReadonly_Name": "属性'{0}'是只读的。",
             "RTFFileFilter": "RTF文件(*.rtf)|*.rtf",
             "ReadonlyCanNotDeleteBackgroundText": "不能删除输入域的背景文本。",
             "ReadonlyCanNotDeleteBorderElement": "不能删除输入域边界元素。",
@@ -119,12 +126,118 @@ export let WriterControl_Main = {
             "SystemAlert": "系统提示",
             "TXTFileFilter": "TXT文件(*.txt)|*.txt",
             "ValueInvalidate": "数据校验错误",
-            "ValueInvalidate_Source_Value_Result": "对象“{0}”内容为“{1}”，数据校验错误“{2}”。",
+            "ValueInvalidate_Source_Value_Result": "对象'{0}'内容为'{1}'，数据校验错误'{2}'。",
             "ValueValidateFail": "数据校验失败.",
             "ValueValidateOK": "数据校验成功.",
             "WhereToCopy": "复制到何处？",
             "WhereToMove": "移动到何处？",
             "XMLFilter": "XML文件|*.xml"
+        };*/
+        window.__DCSR = {
+            "NotSupportedFileFormat": " Unsupported file format:",
+            "MillisecondsForLoadDocument": "load time document milliseconds:",
+            "NotSupportedXmlNode": "Unsupported XML node :",
+            "LoadFontData": "Load font information:",
+            "ControlDisposed_ID": "DCWriter control {0} has been destroyed.",
+            "BeginLoadWriterControlForWASM": "start loading WriterControlForWASM:",
+            "EndLoadWriterControlForWASM": "WriterControlForWASM initialization time consuming,",
+            "Waitting": " Please wait a moment...",
+            "AllFileFilter": "All files *.*",
+            "ArgumentOutOfRange_Name_Value_Max_Min": "parameters' {0} 'value is' {1}', beyond the scope of the maximum '{2}' minimum '{3}'.",
+            "ButtonNewText": "Button",
+            "By": "By",
+            "CheckRequired_Name": "Single/checkbox group '{0}' must have a checkbox.",
+            "ClipboardErrorMessage": "It might be caused by the clipboard of the real-time monitoring system of security software such as 360.",
+            "DeleteElement_Content": "Delete '{0}'",
+            "DeleteElements_Count": "Delete {0} elements",
+            "EditControlReadonly": "The editor control is read-only.",
+            "ElementType_Body": "Document Body",
+            "ElementType_Char": "Character",
+            "ElementType_CheckBox": "Checkbox",
+            "ElementType_Comment": "Document Comment",
+            "ElementType_Document": "Document",
+            "ElementType_Footer": "Footer",
+            "ElementType_HL": "Horizontal line",
+            "ElementType_Header": "Header",
+            "ElementType_Image": "Image",
+            "ElementType_InputField": "InputField",
+            "ElementType_Label": "Text Label",
+            "ElementType_LineBreak": "Line break",
+            "ElementType_PageBreak": "Page break",
+            "ElementType_PageInfo": "Page Number",
+            "Youdaoplaceholder0 ": " paragraph symbols",
+            "ElementType_RadioBox": "RadioBox",
+            "ElementType_Table": "Table",
+            "ElementType_TableCell": "Cell",
+            "ElementType_TableColumn": "TableColumn",
+            "ElementType_TableRow": "Table Rows",
+            "FailToAcceptChildElement_Parent_Child": "Container element {0} cannot accept child element {0}.",
+            "FixLayoutForPrint": "The layout of the document content cannot be modified when the document is in print or print preview.",
+            "Footer": "footer",
+            "ForbidEmpty": "The data cannot be empty.",
+            "Header": "Page Header",
+            "IDRepeat_ID": "Found duplicate element ID value '{0}'.",
+            "InsertElement_Content": "Insert '{0}'",
+            "InsertElements_Count": "Insert {0} elements",
+            "InvalidateCommandName_Name_SimiliarNames": "Incorrect command '{0}'. The system supports similar commands such as '{1}'.",
+            "InvalidatePageSettings": "Invalid page Settings. Please adjust the document page Settings carefully.",
+            "Items_Count": "There are {0} items.",
+            "LabelNewText": "Label Text",
+            "LessThanMinLength_Length": "The text is too short and must not be less than {0} characters.",
+            "LessThanMinValue_Value": "Less than the minimum value {0}.",
+            "LineInfo_PageIndex_LineIndex_ColumnIndex": "Page {0}, row {1}, column {2}.",
+            "LoadComplete_Size": "Loading completed. A total of {0} was loaded.",
+            "Loading_FileName_Format": "is loaded in {1} format file '{0}'...",
+            "MissProperty_Name": "Property '{0}' was not found.",
+            "MoreThanMaxDemicalDigits": "The number of decimal places exceeds the upper limit, which is {0}.",
+            "MoreThanMaxLength_Length": "The text is too long and must not exceed {0} characters.",
+            "MoreThanMaxValue_Value": "Exceeding the maximum value {0}.",
+            "MustDateTimeType": "Must be in date-time format.",
+            "MustDateType": "Must be in date format.",
+            "MustInteger": "Must be an integer.",
+            "MustNumeric": "Must be numeric.",
+            "MustTimeType": "Must be in time format.",
+            "NeedSetOwnerDocument": "The OwnerDocument property value needs to be set first.",
+            "NoDocument": "No document.",
+            "NoImage": "No image",
+            "NotSupportInThisVersion_Name": "Feature '{0}' is not supported in the current version.",
+            "NotSupportSerializeText_Format": "Does not support storing in plain text format as the '{0}' file format.",
+            "NotSupportSerialize_Format": "Storage in the '{0}' format is not supported.",
+            "NotSupportWrite_Format": "Files in the '{0}' format are not supported for saving.",
+            "OwnerDocumentNUll": "The document element does not yet belong to a certain document, and the operation cannot be performed.",
+            "PageBottomMargin": "Next page margin",
+            "PageBreak": "Page break",
+            "PageLeftMargin": "Left margin",
+            "PageRightMargin": "Right margin",
+            "PageStateLocked": "The pagination status of the current document is locked, and the re-pagination operation cannot be performed.  Please do not call functions such as RefreshPages()/RefreshDocument()/UpdateDocumentView()/EditorRefreshView() that are prone to causing re-pagination at this time. ",
+            "PageTopMargin": "Upper margin",
+            "Youdaoplaceholder0 ": " first line indentation",
+            "Youdaoplaceholder0 ": " left indentation",
+            "PromptDisableOSClipboardData": "programs from external data is prohibited.",
+            "PromptJumpStartForSearch": "You have reached the end of the document. Do you want to continue searching from the beginning?",
+            "PromptMaxTextLengthForPaste_Length": "system Settings for paste or insert content cannot receive more than {0} characters.",
+            "PromptProtectedContent": "Content is protected, operations are restricted or cannot be performed.",
+            "PromptRejectFormat_Format": "The system is set to reject data in the '{0}' format.",
+            "PropertyCannotHasParameter_Name": "attributes' {0} 'cannot have parameters.",
+            "PropertyIsReadonly_Name": "the property '{0}' is read-only.",
+            "RTFFileFilter": "RTF file (*.rtf) / *.rtf",
+            "ReadonlyCanNotDeleteBackgroundText": "can't delete the background text input fields.",
+            "ReadonlyCanNotDeleteBorderElement": "can't delete the input domain boundary element.",
+            "ReadonlyCanNotDeleteLastParagraphFlag": "at any time can't delete the last paragraph.",
+            "ReadonlyCannotAcceptElementType_ParentType_ChildType": "{0} type element cannot accept {1} type of child elements.",
+            "ReadonlyContainerReadonly": "container element is set to read-only content.",
+            "ReadonlyContentProtect": "The content is read-only due to mandatory content protection Settings.",
+            "ReadonlyInputFieldUserEditable_ID": "the content of the input domain ({0}) is set to not directly modify.",
+            "RowExistInTable": "The table rows are already in the table.",
+            "SystemAlert": "System prompt",
+            "TXTFileFilter": "TXT file (*.txt) *.txt",
+            "ValueInvalidate": "Data validation error",
+            "ValueInvalidate_Source_Value_Result": "The content of the object '{0}' is '{1}', and the data validation error '{2}'.",
+            "ValueValidateFail": "Data verification failed.",
+            "ValueValidateOK": "Data verification successful.",
+            "WhereToCopy": "Where to copy?",
+            "WhereToMove": "Where to move?",
+            "XMLFilter": "XML file *.xml"
         };
         window.__SetDCStringResourceValues(window.__DCSR);
     },
@@ -163,7 +276,7 @@ export let WriterControl_Main = {
                     }
                 }).catch((err) => {
                     window.__LocalFontsErrorFlag = true;
-                    console.log(err);
+                    console.log("Query local font list error:" + err);
                 });
             }
             catch (ext) {
@@ -208,7 +321,7 @@ export let WriterControl_Main = {
             if (!!window.WriterControl_OnLoadError && typeof (window.WriterControl_OnLoadError) == "function") {
                 window.WriterControl_OnLoadError.call(strContainerID, strContainerID);
             }
-            throw "DCWriter5的功能模块尚未全部加载，暂时无法创建编辑器控件。";
+            throw "The functional modules of DCWriter5 have not been fully loaded yet, so it is temporarily impossible to create editor controls. ";
         }
         var strRuntimeID = strContainerID;
         if (typeof strContainerID == "object") {
@@ -251,7 +364,7 @@ export let WriterControl_Main = {
         }
 
         rootElement.__BKImgStyleName = "__dcbkimg_" + parseInt(Math.random() * 1000000);
-        DCTools20221228.LogTick("初始化控件" + rootElement.id);
+        DCTools20221228.LogTick("Initalizing control:" + rootElement.id);
 
         try {
             //存储加载文档花费毫秒，用于提供给性能页面
@@ -290,7 +403,7 @@ export let WriterControl_Main = {
         nativeControl.invokeMethod("set_WASMBaseZoomRate", window.devicePixelRatio);
         rootElement.CheckDisposed = function () {
             if (rootElement.__DCDisposed == true) {
-                throw "DCWriter编辑器控件{" + rootElement.id + "}已经被销毁了，无法使用。";
+                throw "DCWriter control{" + rootElement.id + "} is disposed,can not use again.";
             }
         };
         if (rootElement.getAttribute("enabledlogapi") == "true") {
@@ -307,12 +420,12 @@ export let WriterControl_Main = {
         var strProductVersion = nativeControl.invokeMethod("GetProductVersion");
         //rootElement.setAttribute("dctype", "WriterControlForWASM");
         rootElement.setAttribute("dcversion", strProductVersion);
-        console.log("DCWriter5软件发布时间:" + strProductVersion);
+        console.log("DCWriter published time:" + strProductVersion);
         if (rootElementIsCreated == false) {
             // 没有创建时，直接创建
-                WriterControl_API.BindControlForCommon(rootElement, rootElement.__DCWriterReference);
-                // 添加编辑器控件的成员
-                WriterControl_API.BindControlForWriterControlForWASM(rootElement, rootElement.__DCWriterReference);
+            WriterControl_API.BindControlForCommon(rootElement, rootElement.__DCWriterReference);
+            // 添加编辑器控件的成员
+            WriterControl_API.BindControlForWriterControlForWASM(rootElement, rootElement.__DCWriterReference);
         }
 
         // 加载系统配置
@@ -682,7 +795,7 @@ export let WriterControl_Main = {
             WriterControl_DateTimeControl.CreateCalendarCss(rootElement);
             WriterControl_Event.RaiseControlEvent(rootElement, "OnLoad");
             rootElement.__DCWriterReference.invokeMethod("CheckForLoadDefaultDocument");
-                WriterControl_Rule.UpdateRuleVisible(rootElement);
+            WriterControl_Rule.UpdateRuleVisible(rootElement);
             if (!rootElement.AboutControl || !rootElement.firstChild) {
                 // 编辑器创建失败
                 if (!!window.WriterControl_OnLoadError && typeof (window.WriterControl_OnLoadError) == "function") {
@@ -711,7 +824,7 @@ export let WriterControl_Main = {
         // 释放观察者模式的函数
         const disconnectObserver = () => {
             observer.disconnect();
-            console.log('观察模式被释放');
+            console.log('Release observer mode.');
         };
         // 监听执行的函数
         const handleMutation = (mutation) => {

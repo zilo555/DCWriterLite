@@ -232,7 +232,7 @@ export let WriterControl_IO = {
         //}
         WriterControl_Paint.InvalidateAllView(rootElement);
         tick = new Date().valueOf() - tick;
-        console.log("加载文档花费毫秒:" + tick);
+        console.log(window.__DCSR.MillisecondsForLoadDocument + tick);
 
         try {
             //存储加载文档花费毫秒，用于提供给性能页面
@@ -244,7 +244,7 @@ export let WriterControl_IO = {
             }
             indexPerformanceTiming['documentTiming'] = [...(indexPerformanceTiming.documentTiming || [])];
             indexPerformanceTiming['documentTiming'].push({
-                title: "加载文档花费毫秒",
+                title: window.__DCSR.MillisecondsForLoadDocument,
                 useTime: tick,
                 id: rootElement.id
             });
@@ -275,7 +275,7 @@ export let WriterControl_IO = {
                     }
                 }
             }
-            
+
         }
         return result;
     },
@@ -324,7 +324,7 @@ export let WriterControl_IO = {
         // WriterControl_Rule.InvalidateView(rootElement, "vrule");
         //WriterControl_Paint.InvalidateAllView(rootElement);
         tick = new Date().valueOf() - tick;
-        console.log("加载文档花费毫秒:" + tick);
+        console.log(window.__DCSR.MillisecondsForLoadDocument + tick);
         return result;
     },
 
@@ -340,7 +340,7 @@ export let WriterControl_IO = {
         var result = rootElement.__DCWriterReference.invokeMethod("AddDocumentsByMixedFilesForPrintPreview", parameters);;
         rootElement.TempElementForDoubleBuffer = null;
         tick = new Date().valueOf() - tick;
-        console.log("加载文档花费毫秒:" + tick);
+        console.log(window.__DCSR.MillisecondsForLoadDocument + tick);
         return result;
     },
 
@@ -361,50 +361,9 @@ export let WriterControl_IO = {
         }
         rootElement.CheckDisposed();
         strFileName = rootElement.__DCWriterReference.invokeMethod("GetRuntimeFileName", strFileName);
-        if (strFormat == "xml"
-            || strFormat == "htm"
-            || strFormat == "html"
-            || strFormat == "json"
-            || strFormat == "text"
-            || strFormat == "rtf") {
+        if (strFormat == "xml") {
             // 这些文件格式可以在本地生成
             var strResult = DCTools20221228.UnPackageStringValue(rootElement.__DCWriterReference.invokeMethod("SaveDocumentToString", strFormat));
-            if (strFileName == null || strFileName.length == 0) {
-                strFileName = new Date().getTime();//文件名
-            }
-            var strBlobType = "text/xml";
-            if (strFormat == "xml") {
-                strFileName = strFileName + ".xml";
-                strBlobType = "text/xml";
-            }
-            else if (strFormat == "rtf") {
-                strFileName = strFileName + ".rtf";
-                strBlobType = "application/rtf";
-            }
-            else if (strFormat == "text") {
-                strFileName = strFileName + ".txt";
-                strBlobType = "text/plain";
-            }
-            else if (strFormat == "json") {
-                strFileName = strFileName + ".json";
-                strBlobType = "application/json";
-            }
-            else if (strFormat == "html" || strFormat == "htm") {
-                strFileName = strFileName + ".html";
-                strBlobType = "text/html";
-                // 20240327 lixinyu 解决下载html内容靠左偏移问题(DUWRITER5_0-2092)
-                // 获取页面宽度和页边距
-                var pageStyle = rootElement.GetDocumentPageSettings();
-                const regex = /<head>([\s\S]*?)<\/head>/;
-                var headerInner = strResult.match(regex);//head标签中原有的字符串
-                //拼接出一个新的header内容给strResult
-                var headerStyle = (headerInner[1] || '') + `<style>body{margin-left:auto;margin-right:auto;width:${pageStyle.PaperWidthInCM + 'cm' || 'auto'};padding-left:${pageStyle.LeftMarginInCM || 0}cm;padding-right:${pageStyle.RightMarginInCM || 0}cm;box-sizing:border-box;}</style>`;
-                strResult = strResult.replace(regex, headerStyle);
-            }
-            else if (strFormat == "rtf") {
-                strFileName = strFileName + ".html";
-                strBlobType = "text/rtf";
-            }
             if (typeof (callBack) == "function") {
                 callBack(strResult);
             } else {
@@ -421,49 +380,8 @@ export let WriterControl_IO = {
             }
             return true;
         }
-        
-        else if (strFormat == "local.pdf") {
-            if (strFileName == null || strFileName.length == 0) {
-                strFileName = new Date().getTime();//文件名
-            }
-            WriterControl_Print.SaveLocalPDF(
-                {
-                    RootElement: rootElement,
-                    FileName: strFileName + ".pdf",
-                    CallBack: callBack
-                }
-            );
-            return true;
-        }
-        else if (strFormat == "ofd") {
-            if (strFileName == null || strFileName.length == 0) {
-                strFileName = new Date().getTime();//文件名
-            }
-            WriterControl_Print.SaveLocalPDF(
-                {
-                    RootElement: rootElement,
-                    FileName: strFileName + ".ofd",
-                    CallBack: callBack,
-                    ForOFD: true
-                }
-            );
-            return true;
-        }
-        else if (strFormat == "svg") {
-            if (strFileName == null || strFileName.length == 0) {
-                strFileName = new Date().getTime();//文件名
-            }
-            var strHtml = rootElement.__DCWriterReference.invokeMethod("GetSVGHtmlForPrint", true);
-            if (typeof (callBack) == "function") {
-                callBack(strHtml);
-            }
-            else {
-                DCTools20221228.DownloadAsFile(strHtml, "text/html", strFileName + ".html");
-            }
-            return true;
-        }
         else {
-            console.log("DCWriter:不支持的文件格式:" + strFormat);
+            console.log(window.__DCSR.NotSupportedFileFormat + strFormat);
         }
         return false;
     },

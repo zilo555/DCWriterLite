@@ -32,9 +32,9 @@ namespace DCSoft.WASM
             }
         }
 
-        public WriterControlForWASM( string strID = null)
+        public WriterControlForWASM(string strID = null)
         {
-            DCConsole.Default.WriteLine("开始加载 WriterControlForWASM：" + DateTimeCommon.GetNow().ToString("HH:mm:ss.fff"));
+            DCConsole.Default.WriteLine(DCSR.BeginLoadWriterControlForWASM + DateTimeCommon.GetNow().ToString("HH:mm:ss.fff"));
             var tick = Environment.TickCount;
             this._ContainerElementID = strID;
             this._Control = new MyWriterControlWASM(this);// DCSoft.Writer.Controls.WriterControl();
@@ -42,14 +42,14 @@ namespace DCSoft.WASM
             this._Control.StartForWASM(this);
             WASMEnvironment.SetJSProivder(this);
             tick = Math.Abs(Environment.TickCount - tick);
-            DCConsole.Default.WriteLine("WriterControlForWASM 初始化耗时" + tick);
+            DCConsole.Default.WriteLine(DCSR.EndLoadWriterControlForWASM + tick);
         }
 
         [JSInvokable]
         public virtual DotNetObjectReference<DomElement> GetElementByHashCode(int hashCode)
         {
             var element = this.Document?.GetElementByHashCode(hashCode);
-            if( element == null )
+            if (element == null)
             {
                 return null;
             }
@@ -68,34 +68,34 @@ namespace DCSoft.WASM
         {
             return DCSystemInfo.PublishDateString;
         }
-         
+
         [JSInvokable]
         public void BeginPlayAPILogRecord()
         {
             this._IsHashCodeAsNativeHandle = true;
             this._ElementNativeHandles?.Clear();
         }
-       
+
         /// <summary>
         /// 获得指定编号的元素的在客户端的排版信息
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [JSInvokable]
-        public JsonObject GetElementLayoutInfoByID( string id )
+        public JsonObject GetElementLayoutInfoByID(string id)
         {
-            if(id == null || id.Length == 0 )
+            if (id == null || id.Length == 0)
             {
                 return null;
             }
             WriterViewControl.WASMClientPosInfo info = null;
             var ctl = this._Control.GetInnerViewControl();
-                var ele = ctl.Document.GetElementById(id);
-                if(ele != null )
-                {
-                    info = ctl.GetClientPosInfo(ele);
-                }
-            if(info != null )
+            var ele = ctl.Document.GetElementById(id);
+            if (ele != null)
+            {
+                info = ctl.GetClientPosInfo(ele);
+            }
+            if (info != null)
             {
                 var result = new JsonObject();
                 result.Add("PageIndex", info.PageIndex);
@@ -114,7 +114,7 @@ namespace DCSoft.WASM
         /// <returns>是否支持</returns>
         public bool JSIsSupportFontName(string strFontName)
         {
-            return DCSoft.TrueTypeFontSnapshort.Support(strFontName) ;
+            return DCSoft.TrueTypeFontSnapshort.Support(strFontName);
         }
 
         private bool _IsHashCodeAsNativeHandle = false;
@@ -252,7 +252,7 @@ namespace DCSoft.WASM
             catch (Exception ex)
             {
                 JavaScriptMethods.Tools_ReportException("CheckForLoadDefaultDocument", ex.Message, ex.StackTrace.ToString(), 0);
-                return ;
+                return;
             }
         }
 
@@ -277,7 +277,7 @@ namespace DCSoft.WASM
         /// <exception cref="ObjectDisposedException"></exception>
         internal void CheckStateBeforeInvoke()
         {
-            if( this._IsDisposed)
+            if (this._IsDisposed)
             {
                 throw new ObjectDisposedException("WriterControl:" + this._DisposedIDBack);
             }
@@ -299,9 +299,9 @@ namespace DCSoft.WASM
         {
             try
             {
-                if(this._DocumentStatsBackForPrint != null )
+                if (this._DocumentStatsBackForPrint != null)
                 {
-                    foreach(var item in this._DocumentStatsBackForPrint )
+                    foreach (var item in this._DocumentStatsBackForPrint)
                     {
                         item.Value.Dispose();
                     }
@@ -332,7 +332,7 @@ namespace DCSoft.WASM
                 this._ReferenceAtJS = null;
                 this._IsDisposed = true;
                 this._DisposedIDBack = this._ContainerElementID;
-                DCConsole.Default.WriteLine("DCWriter控件{" + this._ContainerElementID + "}被销毁了.");
+                DCConsole.Default.WriteLine(string.Format(DCSR.ControlDisposed_ID, this._ContainerElementID));
                 this._ContainerElementID = null;
                 var time = DateTime.Now.Second;
                 if (Math.Abs(time - _LastGCTime) > 2)
@@ -370,8 +370,8 @@ namespace DCSoft.WASM
         public bool HandleDCWriterInnerEvent(string eventName, object arg)
         {
             return this.JS_InvokeInstance<bool>(
-                JavaScriptMethods.JSNAME_WriterControl_Event_HandleDCWriterInnerEvent, 
-                eventName, 
+                JavaScriptMethods.JSNAME_WriterControl_Event_HandleDCWriterInnerEvent,
+                eventName,
                 arg);
         }
 
@@ -379,7 +379,7 @@ namespace DCSoft.WASM
         {
             return JavaScriptMethods.UI_HasControlEvent(this._ContainerElementID, eventName);
         }
-        
+
         public void RaiseControlEvent(string eventName, object args)
         {
             if (args is JsonObject)
@@ -610,7 +610,7 @@ namespace DCSoft.WASM
 
         public DCSoft.Writer.Serialization.ArrayXmlReader CreateXmlReaderByXmlText(string strXml)
         {
-            if( strXml == null || strXml.Length == 0 )
+            if (strXml == null || strXml.Length == 0)
             {
                 return null;
             }
@@ -665,11 +665,11 @@ namespace DCSoft.WASM
 
         internal class MyWriterControlWASM : DCSoft.Writer.Controls.WriterControl
         {
-            public MyWriterControlWASM(WriterControlForWASM p )
+            public MyWriterControlWASM(WriterControlForWASM p)
             {
                 this._WASMParent = p;
             }
-            
+
             public override IDataObject CreateDataObject()
             {
                 return new WASMDataObject(new Dictionary<string, object>());
@@ -714,7 +714,7 @@ namespace DCSoft.WASM
             public override void Dispose()
             {
                 base.Dispose();
-                if(this._Cache_HasControlEvents != null)
+                if (this._Cache_HasControlEvents != null)
                 {
                     this._Cache_HasControlEvents.Clear();
                     this._Cache_HasControlEvents = null;
@@ -764,9 +764,9 @@ namespace DCSoft.WASM
             {
                 if (JavaScriptMethods.UI_IsAPILogRecord(this._WASMParent._ContainerElementID))
                 {
-                    return "[API录像]";
+                    return "[API Record]";
                 }
-                return null ;
+                return null;
             }
             public JsonNode ShowAboutDialog(bool shouUI)
             {
@@ -798,7 +798,7 @@ namespace DCSoft.WASM
                     return this._WASMParent;
                 }
             }
-             
+
             public override void JS_UpdatePages(string strPageCodes)
             {
                 this._WASMParent.JS_UpdatePages(strPageCodes);
@@ -808,7 +808,7 @@ namespace DCSoft.WASM
                 return JavaScriptMethods.GetNowDateTime();
             }
             internal DCSoft.Writer.Dom.DomInputFieldElement _JS_BeginEditValueUseListBoxControl_Field = null;
-            
+
             public override void JS_BeginEditValueUseListBoxControl(
                 DCSoft.Writer.Dom.DomInputFieldElement field,
                 DCSoft.Writer.Data.ListItemCollection items,
@@ -845,7 +845,7 @@ namespace DCSoft.WASM
             private Dictionary<string, bool> _Cache_HasControlEvents = new Dictionary<string, bool>();
             public override void WASMRaiseEvent(string eventName, object args)
             {
-                if( eventName == null || eventName.Length == 0 )
+                if (eventName == null || eventName.Length == 0)
                 {
                     throw new ArgumentNullException("eventName");
                 }

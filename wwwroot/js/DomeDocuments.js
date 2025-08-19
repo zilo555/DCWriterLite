@@ -70,6 +70,7 @@ var TemplateList = [
     "The Infectious Disease Report Card of PRC",
     "The Ultrasound Diagnosis",
     "WOMAC Score",
+    "BigTable"
 ];
 
 
@@ -116,7 +117,7 @@ function showDialog() {
     header.style.flexShrink = '0';
 
     const title = document.createElement('h2');
-    title.style.fontSize = '18px';
+    title.style.fontSize = '22px';
     title.style.fontWeight = 'bold';
     title.style.color = '#333333';
     title.style.margin = '0';
@@ -135,18 +136,20 @@ function showDialog() {
     // Left sidebar - categories (blue)
     const sidebar = document.createElement('div');
     sidebar.style.width = '280px';
-    sidebar.style.backgroundColor = '#2B579A';
+    sidebar.style.backgroundColor = '#446995';
     sidebar.style.color = '#FFFFFF';
     sidebar.style.display = 'flex';
     sidebar.style.flexDirection = 'column';
     sidebar.style.padding = '16px 12px';
     sidebar.style.boxSizing = 'border-box';
     sidebar.style.height = '100%';
+    sidebar.style.gap = '28px';
 
     // helper to create a sidebar button with svg icon
     function createSidebarButton(text, svgContent, onClick, isActive) {
         const btn = document.createElement('div');
         btn.style.display = 'flex';
+        btn.style.flexDirection = 'column';
         btn.style.alignItems = 'center';
         btn.style.gap = '12px';
         btn.style.padding = '14px 16px';
@@ -166,8 +169,6 @@ function showDialog() {
             btn.style.backgroundColor = isActive ? 'rgba(255,255,255,0.12)' : 'transparent';
         });
         const iconWrap = document.createElement('div');
-        iconWrap.style.width = '22px';
-        iconWrap.style.height = '22px';
         iconWrap.style.display = 'flex';
         iconWrap.style.alignItems = 'center';
         iconWrap.style.justifyContent = 'center';
@@ -182,9 +183,9 @@ function showDialog() {
     }
 
     // SVG icons
-    const svgBack = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    const svgGrid = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>';
-    const svgOpen = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7h5l2 2h11v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 7V5a2 2 0 0 1 2-2h5l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    const svgBack = '<svg t="1755496903257" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21060" width="30" height="30"><path d="M910.222222 540.444444v455.111112H597.333333v-199.111112h-170.666666v199.111112H113.777778V512H0L512 28.444444l512 512h-113.777778zM142.222222 455.111111h28.444445v483.555556h199.111111v-199.111111h284.444444v199.111111h199.111111V483.555556h28.444445L512 113.777778 142.222222 455.111111z" fill="#FFFFFF" p-id="21061"></path></svg>';
+    const svgGrid = '<svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>';
+    // const svgOpen = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7h5l2 2h11v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 7V5a2 2 0 0 1 2-2h5l2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 
     // hidden file input for Open
     const hiddenFile = document.createElement('input');
@@ -198,13 +199,23 @@ function showDialog() {
     });
 
     // three buttons: Back, 全部模板, 打开
-    const backBtn = createSidebarButton('Back', svgBack, () => closeDialog(), false);
+    const backBtn = createSidebarButton('Home', svgBack, () => closeDialog(), false);
     const allBtn = createSidebarButton('Documents', svgGrid, null, true);
     // const openBtn = createSidebarButton('打开', svgOpen, () => handleDCExecuteCommand('FileOpen'), false);
 
     sidebar.appendChild(backBtn);
     sidebar.appendChild(allBtn);
     // sidebar.appendChild(openBtn);
+
+    // 底部分隔线，增强设计感
+    const bottomDivider = document.createElement('div');
+    bottomDivider.style.height = '1px';
+    bottomDivider.style.background = 'rgba(255,255,255,0.35)';
+    bottomDivider.style.width = '100%';
+    bottomDivider.style.marginTop = 'auto';
+    bottomDivider.style.borderRadius = '1px';
+    bottomDivider.style.opacity = '0.9';
+    sidebar.appendChild(bottomDivider);
 
     // Right side - main list area
     const mainArea = document.createElement('div');
@@ -321,7 +332,27 @@ function showDialog() {
     }
 
     // Assemble dialog
+    // 右下角 Close 按钮
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Close';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.right = '16px';
+    closeBtn.style.bottom = '16px';
+    closeBtn.style.padding = '8px 14px';
+    closeBtn.style.backgroundColor = '#446995';
+    closeBtn.style.color = '#FFFFFF';
+    closeBtn.style.border = 'none';
+    closeBtn.style.borderRadius = '6px';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.fontSize = '14px';
+    closeBtn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+    closeBtn.style.zIndex = '1001';
+    closeBtn.addEventListener('mouseenter', () => { closeBtn.style.opacity = '0.9'; });
+    closeBtn.addEventListener('mouseleave', () => { closeBtn.style.opacity = '1'; });
+    closeBtn.addEventListener('click', closeDialog);
+
     dialogContent.appendChild(content);
+    dialogContent.appendChild(closeBtn);
     dialog.appendChild(dialogContent);
     document.body.appendChild(dialog);
 

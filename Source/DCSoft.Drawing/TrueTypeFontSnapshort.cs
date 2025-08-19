@@ -128,7 +128,7 @@ namespace DCSoft
             reader.Close();
             //newItem._Loaded = true;
             newItem.FontName = strName;
-            DCConsole.Default.WriteLine("加载字体信息:" + newItem.FontName + " , " + newItem.Style.ToString());
+            DCConsole.Default.WriteLine(DCSR.LoadFontData + newItem.FontName + " , " + newItem.Style.ToString());
             return newItem;
         }
          

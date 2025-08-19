@@ -51,6 +51,11 @@ namespace DCSoft
 
 #endif
         #endregion
+        internal static string NotSupportedXmlNode { get { return GetValue("NotSupportedXmlNode"); } }
+        internal static string LoadFontData { get { return GetValue("LoadFontData"); } }
+        internal static string ControlDisposed_ID { get { return GetValue("ControlDisposed_ID"); } }
+        internal static string BeginLoadWriterControlForWASM { get { return GetValue("BeginLoadWriterControlForWASM"); } }
+        internal static string EndLoadWriterControlForWASM { get { return GetValue("EndLoadWriterControlForWASM"); } }
         internal static string Footer { get { return GetValue("Footer"); } }
         internal static string Header { get { return GetValue("Header"); } }
         internal static string PageBreak { get { return GetValue("PageBreak"); } }
