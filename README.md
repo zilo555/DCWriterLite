@@ -411,3 +411,5 @@ Compared to the open-source version, the commercial version enhances the DOM mod
       - 可以设置条形码的类型（Code128、Code39、EAN13、UPC等）
       - 可以设置条形码的内容
       - 可以设置条形码的大小
+# Donate 捐助
+You can donate by <a href="https://www.paypal.com/paypalme/yuanyongfu">paypal</a> , by <a href="https://raw.githubusercontent.com/dcsoft-yyf/DCNETProtector/main/alipay.jpg">alipay</a> , by <a href="https://raw.githubusercontent.com/dcsoft-yyf/DCNETProtector/main/wechat_pay.png">Wechat</a>,help author to feed twins born in 2020.
