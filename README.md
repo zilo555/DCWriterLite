@@ -3,7 +3,7 @@ August 18, 2025
 
 <br />Author : yongfu-yuan(袁永福) from CHINA . Email:28348092@qq.com,Site:[https://dcwriter.cn/](https://dcwriter.cn/).
 # update log
-<br/> 2025-8-18 : First publish.
+<br/> 2025-8-18 : First publish. 
 # Introduction
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-1.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-2.png"/>
