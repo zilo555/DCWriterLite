@@ -3,7 +3,7 @@ August 18, 2025
 
 <br />Author : yongfu-yuan(袁永福) from CHINA . Email:28348092@qq.com,Site:[https://dcwriter.cn/](https://dcwriter.cn/).
 # update log
-<br/> 2025-8-18 : First publish. 
+<br/> 2025-8-18 : First publish.
 # Introduction
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-1.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-2.png"/>
@@ -21,6 +21,7 @@ August 18, 2025
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/uos.jpg"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/kylin.jpg"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/fde.jpg"/>
+
 - Supports Chrome, Firefox, and other browsers.
 - Pure front-end components, does not rely on server-side, and does not depend on any third-party components.
 ## File Operations:
