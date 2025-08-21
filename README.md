@@ -3,17 +3,24 @@ August 18, 2025
 
 <br />Author : yongfu-yuan(袁永福) from CHINA . Email:28348092@qq.com,Site:[https://dcwriter.cn/](https://dcwriter.cn/).
 # update log
-
+<br/> 2025-8-18 : First publish.
 # Introduction
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-1.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-2.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-3.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-4.png"/>
 
-<br/>&nbsp; &nbsp; **DCWriterLite** is a powerful open-source online RTF rich text editor component designed for enterprise-level applications. Unlike other software such as TinyMCE and CKEditor, which are developed based on the browser's HTML DOM, DCWriterLite builds its own DOM structure, uses XML to store documents, and employs Canvas for document rendering and SVG for document printing. This enables DCWriterLite to overcome the limitations of the HTML DOM and achieve highly advanced document editing features, such as real-time pagination, reliable redo/undo functionality, and robust form fields. It also offers unique secondary development capabilities, allowing developers to extend existing document element types and create their own, thus meeting more complex business requirements. DCWriterLite is developed based on Blazor Webassembly 9.0 and has been modified at the WASM low-level framework level. Compared to other Blazor WASM programs, it significantly reduces the size of the executable file, which enhances software loading speed and reduces memory usage. <br/>&nbsp; &nbsp; DCWriterLite is a pure front-end component with no restrictions on the server side, making it convenient to adapt to various operating environments. <br/>&nbsp; &nbsp; DCWriterLite is an open-source software. We also offer a corresponding commercial version, DCWriter, which implements all the functions of DCWriterLite and provides more abundant software features as well as reliable technical support and services. 
+<br/>&nbsp; &nbsp; **DCWriterLite** is a powerful open-source online RTF rich text editor component just like MS WORD. It designed for enterprise-level applications.
+<br/>&nbsp; &nbsp; Unlike other software such as TinyMCE and CKEditor, which are developed based on the browser's HTML DOM, DCWriterLite builds its own DOM structure, uses XML to store documents, and employs Canvas for document rendering and SVG for document printing. This enables DCWriterLite to overcome the limitations of the HTML DOM and achieve highly advanced document editing features, such as real-time pagination, reliable redo/undo functionality, and robust form fields.
+<br/>&nbsp; &nbsp; It also offers unique secondary development capabilities, allowing developers to extend existing document element types and create their own, thus meeting more complex business requirements. 
+<br/>&nbsp; &nbsp; DCWriterLite is developed based on Blazor Webassembly 9.0 and has been modified at the WASM low-level framework level. Compared to other Blazor WASM programs, it significantly reduces the size of the executable file, which enhances software loading speed and reduces memory usage. <br/>&nbsp; &nbsp; DCWriterLite is a pure front-end component with no restrictions on the server side, making it convenient to adapt to various operating environments. 
+<br/>&nbsp; &nbsp; DCWriterLite is an open-source software. We also offer a corresponding commercial version, DCWriter, which implements all the functions of DCWriterLite and provides more abundant software features as well as reliable technical support and services. 
 # DCWriterLite Open Source Edition Feature List
 ## Operating Environment
 - Supports Windows, Linux, MacOS, iOS, Android, UOS, Kylin, Fde, and other operating systems.
+<img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/uos.jpg"/>
+<br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/kylin.jpg"/>
+<br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/fde.jpg"/>
 - Supports Chrome, Firefox, and other browsers.
 - Pure front-end components, does not rely on server-side, and does not depend on any third-party components.
 ## File Operations:
