@@ -83,7 +83,7 @@ Provides a tree-like DOM model to represent all the content in the document. And
   - Can be set to required status
   - Multi-line text 
 
-  If you want more features and services, please learn about [[the DCWriter Business Edition]]([link text](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)) . 
+  If you want more features and services, please learn about [[the DCWriter Business Edition]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)) . 
 
 =====================================
 
@@ -167,7 +167,7 @@ Provides a tree-like DOM model to represent all the content in the document. And
       - 可以设置为必填状态
       - 文本多行
 
-  您若想要更多的功能和服务，请了解[[DCWriter商业版]]([link text](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)).
+  您若想要更多的功能和服务，请了解[[DCWriter商业版]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)).
  
 # Donate 捐助
 You can donate by <a href="https://www.paypal.com/paypalme/yuanyongfu">paypal</a> , by <a href="https://raw.githubusercontent.com/dcsoft-yyf/DCNETProtector/main/alipay.jpg">alipay</a> , by <a href="https://raw.githubusercontent.com/dcsoft-yyf/DCNETProtector/main/wechat_pay.png">Wechat</a>,help author to feed twins born in 2020.
