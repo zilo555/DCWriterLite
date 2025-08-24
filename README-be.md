@@ -1,7 +1,9 @@
 ﻿# DCWriter for business edition
 August 18, 2025
+
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dc-be.jpg"/>
 (Support document comments ,water mark ,gutter,td-barcode .)
+
 # DCWriter Business Edition Feature List 
  DCWriter Business Edition adds the following features on the basis of the open-source version:
 ## Runtime Environment
@@ -257,3 +259,4 @@ Compared to the open-source version, the commercial version enhances the DOM mod
       - 可以设置条形码的类型（Code128、Code39、EAN13、UPC等）
       - 可以设置条形码的内容
       - 可以设置条形码的大小
+
