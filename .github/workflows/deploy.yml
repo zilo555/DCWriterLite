@@ -11,7 +11,8 @@ jobs:
     permissions:
       id-token: write   # 所需的最小权限
       contents: write # 赋予写入仓库的权限，用于推送 gh-pages 分支
-
+      pages: write      # 核心：部署 Pages 所需的写入权限
+      
     steps:
       # 步骤 1: 获取代码
       - name: Checkout repository
