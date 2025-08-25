@@ -9,6 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write   # 所需的最小权限
       contents: write # 赋予写入仓库的权限，用于推送 gh-pages 分支
 
     steps:
