@@ -265,7 +265,7 @@ function showDialog() {
 
         // 加载XML文件
         listItem.addEventListener('click', async () => {
-            fetch(`/demoDocuments/${item}.xml`)
+            fetch(`demoDocuments/${item}.xml`)
                 .then(res => res.arrayBuffer())
                 .then(buffer => {
                     // 检测XML编码并正确解码
