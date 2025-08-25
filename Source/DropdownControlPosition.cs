@@ -1,7 +1,7 @@
 ﻿using System;
 using DCSoft.Writer.Dom;
 
-namespace DCSoft.WASM
+namespace DCSoft.WASM 
 {
 
     //[System.Reflection.Obfuscation(Exclude = true, ApplyToMembers = true)]
