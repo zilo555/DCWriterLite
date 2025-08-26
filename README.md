@@ -1,4 +1,4 @@
-﻿# DCWriterLite 
+# DCWriterLite 
 August 18, 2025
 
 <br />Author : yongfu-yuan(袁永福,MS MVP <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/msmvpsmall.png"/>) from CHINA . 
@@ -6,6 +6,14 @@ August 18, 2025
 <br />Online demo [https://dcsoft-yyf.github.io/DCWriterLite/index.html](https://dcsoft-yyf.github.io/DCWriterLite/index.html).
 # update log
 <br/> 2025-8-18 : First publish.
+<br/> 2025-8-26 : Update readme.
+# For C# developers
+&nbsp; &nbsp; This open-source project contains 160,000 lines of C# code. These codes demonstrate the following amazing features:  
+1. Using **System.Drawing.Graphics** in Blazor WebAssembly projects.  
+2. Porting **WinForm .NET** code to Blazor WebAssembly.  
+3. Quickly loading and parsing XML text in Blazor WebAssembly. The use of the native **XmlTextReader** is simply too slow in comparison.  
+4. This project also utilizes a trimmed version of the Blazor WebAssembly framework, which reduces the file size of the final **dotnet.wasm** and improves the software loading speed.  
+
 # Introduction
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-1.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-2.png"/>
@@ -87,11 +95,16 @@ Provides a tree-like DOM model to represent all the content in the document. And
 
   If you want more features and services, please learn about [[the DCWriter Business Edition]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)) . 
 
-=====================================
+---
 
+
+# 对于C#程序员
+&nbsp; &nbsp; 这个开源项目包含了16万行的C#代码。这些代码展示了以下神奇的功能：
+1. 在Blazor WebAssembly项目中使用System.Drawing.Graphcis.
+2. 将WinForm.NET的代码移植到Blazor WebAssembly.
+3. 在Blazor WebAssembly中快速的加载和解析Xml文本。而使用原生的XmlTextReader实在是太慢了。
+4. 这个项目还使用了一个剪裁版的Blazor WebAssembly框架，减少最终的dotnet.wasm的文件大小，提高软件加载速度。
 # DCWriterLite简介
-2025-8-18
-
 <br/>&nbsp;&nbsp;**DCWriterLite**是一个面向企业级应用的强大的开源的在线RTF富文本编辑器组件。
 <br/>相对于TinyMCE/CKEditor等其他软件是基于浏览器的HTML DOM开发的，DCWriterLite构建
 <br/>了自己的DOM结构，使用XML来存储文档，使用Canvas绘制文档，使用SVG来打印文档。这使得
