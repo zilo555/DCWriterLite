@@ -4,27 +4,48 @@ August 18, 2025
 <br />Author : yongfu-yuan(袁永福,MS MVP <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/msmvpsmall.png"/>) from CHINA . 
 <br />Email:28348092@qq.com,Site:[https://dcwriter.cn/](https://dcwriter.cn/).
 <br />Online demo [https://dcsoft-yyf.github.io/DCWriterLite/index.html](https://dcsoft-yyf.github.io/DCWriterLite/index.html).
-# update log
+# Update log
 <br/> 2025-8-18 : First publish.
 <br/> 2025-8-26 : Update readme.
-# For C# developers
-&nbsp; &nbsp; This open-source project contains 160,000 lines of C# code. These codes demonstrate the following amazing features:  
-1. Using **System.Drawing.Graphics** in Blazor WebAssembly projects.  
-2. Porting **WinForm .NET** code to Blazor WebAssembly.  
-3. Quickly loading and parsing XML text in Blazor WebAssembly. The use of the native **XmlTextReader** is simply too slow in comparison.  
-4. This project also utilizes a trimmed version of the Blazor WebAssembly framework, which reduces the file size of the final **dotnet.wasm** and improves the software loading speed.  
+<br/> 2025-8-31 : Update readme.
 
-# Introduction
+&nbsp; &nbsp; DCWriterLite is an open source RTF-like structured document editor that benefits many different groups of people:
+# For C# developers
+&nbsp; &nbsp; It shows some amazing programming techniques
+1. In Blazor WebAssembly programming, the use of System.Drawing.Graphics and System.Windows.Forms for control types enables developers to migrate substantial amounts of C# code that would otherwise be discarded into WASM development, thereby safeguarding industry investments in related fields.
+2. It implements a complete DOM model in the most concise way possible, making it easy to learn and understand. OpenOffice also defines a similar DOM model, but it contains tens of thousands of lines of code that are beyond the comprehension of most people or teams.
+3. This project demonstrates how to streamline the Blazor Assembly framework. It helps developers understand some of the underlying principles of Blazor Assembly while reducing the final software file (dotnet.wasm) size and improving loading speed.
+# For toB developers
+1. DCWriterLite provides a featureful structured document function. It provides free text input functionality, but also provides form areas to limit the way specific areas are entered.
+2. DCWriterLite implements a customizable DOM model, offering limitless extension capabilities. Developers can create new document element types to better align software with specific business requirements. For instance, it enables developers to build template creation tools that dynamically define complex form interfaces tailored to user business needs.
+3. Instead of being based on HTML DOM, DCWriterLite implements its own document formatting algorithm, which breaks through some technical limitations of HTML DOM. For example, it implements reliable Undo/Redo functions and maintains completely consistent formatting results across different browsers.
+4. DCWriterLite is stored in XML format with a simple structure, which makes it easy for developers to develop background programs to process millions of documents in bulk without having to call the DCWriterLite software module.
+# For web developers
+&nbsp; &nbsp; DCWriterLite provides the following comfortable features:
+1. It is a pure front-end component that does not rely on third-party components, supports mainstream browsers such as Chrome and Firefox, and software deployment and updates are simple.
+2. It can run on Windows, Linux, Mac, Android, iOS and other operating systems, and behaves consistently across all operating systems.
+3. It provides a very simple API programming interface that can easily implement the paginated tag multi-document pattern.
+# For Chinese developers
+&nbsp; &nbsp; DCWriterLite has passed the original factory certification of domestic Kirin, Fangde and Tongxin operating systems, and complies with the rules of Xin Chuang.
+# For end user
+&nbsp; &nbsp; DCWriterLite provides simple yet not simple document editing capabilities:
+1. It provides a user experience similar to MS Word, which can be used without learning.
+2. It can perform accurate real-time paging, achieve the function of what you see is what you get, unlimited Undo/Redo operations, to help users quickly achieve goals.
+3. Provides tables, title table rows and other functions to quickly create complex typesetting documents.
+# Applicable scenarios
+1. Structured electronic medical record system: to help doctors write the first page of the medical record, admission record, course record, examination report, nursing record, patient informed consent, discharge record and so on.
+2. Government e-document system: helps users define various documents and dynamically adjust the content and status of documents according to business processes.
+3. Financial business compliance document processing: Its unique structured document technology makes it easier for the system to extract key data for inspection and maintenance.
+4. Manufacturing form system: It can quickly define the complex form input interface, help the manufacturing industry to input all kinds of complex node data one by one, and facilitate the back-end to read and analyze quickly.
+# DCWriter Business Edition
+&nbsp; &nbsp; If you want more features and services, please learn about [[the DCWriter Business Edition]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)) . 
+
+# Screen snapshort
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-1.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-2.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-3.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-4.png"/>
 
-<br/>&nbsp; &nbsp; **DCWriterLite** is a powerful open-source online RTF rich text editor component just like MS WORD. It designed for enterprise-level applications.
-<br/>&nbsp; &nbsp; Unlike other software such as TinyMCE and CKEditor, which are developed based on the browser's HTML DOM, DCWriterLite builds its own DOM structure, uses XML to store documents, and employs Canvas for document rendering and SVG for document printing. This enables DCWriterLite to overcome the limitations of the HTML DOM and achieve highly advanced document editing features, such as real-time pagination, reliable redo/undo functionality, and robust form fields.
-<br/>&nbsp; &nbsp; It also offers unique secondary development capabilities, allowing developers to extend existing document element types and create their own, thus meeting more complex business requirements. 
-<br/>&nbsp; &nbsp; DCWriterLite is developed based on Blazor Webassembly 9.0 and has been modified at the WASM low-level framework level. Compared to other Blazor WASM programs, it significantly reduces the size of the executable file, which enhances software loading speed and reduces memory usage. <br/>&nbsp; &nbsp; DCWriterLite is a pure front-end component with no restrictions on the server side, making it convenient to adapt to various operating environments. 
-<br/>&nbsp; &nbsp; DCWriterLite is an open-source software. We also offer a corresponding commercial version, DCWriter, which implements all the functions of DCWriterLite and provides more abundant software features as well as reliable technical support and services. 
 # DCWriterLite Open Source Edition Feature List
 ## Operating Environment
 - Supports Windows, Linux, MacOS, iOS, Android, UOS, Kylin, Fde, and other operating systems.
@@ -98,24 +119,37 @@ Provides a tree-like DOM model to represent all the content in the document. And
 ---
 
 
-# 对于C#程序员
-&nbsp; &nbsp; 这个开源项目包含了16万行的C#代码。这些代码展示了以下神奇的功能：
-1. 在Blazor WebAssembly项目中使用System.Drawing.Graphcis.
-2. 将WinForm.NET的代码移植到Blazor WebAssembly.
-3. 在Blazor WebAssembly中快速的加载和解析Xml文本。而使用原生的XmlTextReader实在是太慢了。
-4. 这个项目还使用了一个剪裁版的Blazor WebAssembly框架，减少最终的dotnet.wasm的文件大小，提高软件加载速度。
-# DCWriterLite简介
-<br/>&nbsp;&nbsp;**DCWriterLite**是一个面向企业级应用的强大的开源的在线RTF富文本编辑器组件。
-<br/>相对于TinyMCE/CKEditor等其他软件是基于浏览器的HTML DOM开发的，DCWriterLite构建
-<br/>了自己的DOM结构，使用XML来存储文档，使用Canvas绘制文档，使用SVG来打印文档。这使得
-<br/>DCWriterLite能突破HTML DOM的限制，实现了非常强大的文档编辑器功能，比如实时分页、
-<br/>可靠的重做/撤销功能、强大的表单域等等。还提供独有的的二次开发能力，开发者可以
-<br/>扩展已有的文档元素类型，并创建自己的文档元素类型，使得软件能满足更复杂的业务需求。
-<br/>DCWriterLite是基于Blazor Webassembly9.0开发的。并魔改了WASM底层框架，相对于其他
-<br/>的Blazor WASM程序，大大减少了可执行文件的大小，这提高了软件加载速度，减少了内存占用。
-<br/>&nbsp;&nbsp;DCWriterLite是一个纯前端的组件，对应服务器端没有任何限制，方便适应各种运行环境。
-<br/>&nbsp;&nbsp;DCWriterLite是一个开源软件，我们还提供一个对应的商业版软件DCWriter，DCWriter实现
-<br/>了DCWriterLite的全部功能，并提供更加丰富的软件功能以及可靠的技术支持和服务。
+&nbsp; &nbsp; DCWriterLite是一个开源的类似RTF的结构化文档编辑器，许多不同的人群都能从中获益：
+# 对于C#开发者
+&nbsp; &nbsp; 它展示了以下神奇的编程技巧
+1. 在Blazor Webassembly编程中使用System.Drawing.Graphics和System.Windows.Forms.Control类型。这能帮助开发者将大量原本要抛弃的C#代码移植到WASM开发中，保护业界在相关领域的投资。
+2. 它以尽可能精炼的方式实现了一套完整的D OM模型，很容易学习领会。而Open Office也定义了类似的DOM模型，但它包含了上千万行代码，超出了绝大多数人或团队的理解能力。
+3. 这个项目展示了如何精简Blazor Wassembly框架。这能帮助开发者理解Blazor Wassembly的部分底层原理，并能减少最终的软件文件(dotnet.wasm)大小，提高软件加载速度。
+# 对于toB的开发者
+1. DCWriterLite提供了特色的结构化文书功能。它提供自由文本录入的功能，同时还能提供表单区域来限制特定区域的录入方式。
+2. DCWriterLite实现了自定义的DOM模型，这就提供了无限的扩展能力。开发者可以据此创建新的文档元素类型，使得软件更符合具体业务需求。比如开发者可以用它来开发模板制作工具，来动态定义用户业务所需的各种复杂的表单界面。
+3. DCWriterLite不是基于HTML DOM，而是自行实现了文档排版算法，这就突破了HTML DOM的一些技术限制。比如实现了可靠的Undo/Redo功能，而且在不同的浏览器间保持完全一致的排版结果。
+4. DCWriterLite采用XML格式进行存储，结构简单。这就使得开发者可以很容易开发出后台程序来批量处理数百万份文档而不必调用DCWriterLite软件模块。
+# 对于Web开发者
+&nbsp; &nbsp; DCWriterLite提供以下令人舒服的特性：
+1. 它是一个纯前端的组件，不依赖于第三方组件，支持Chrome和Firefox等主流浏览器，软件部署和更新很简单。
+2. 它能运行在Windows、Linux、Mac、安卓、iOS等多种操作系统上面，在各种操作系统下的行为是一致的。
+3. 它提供很简洁的API编程接口，可以很方便的实现分页标签多文档模式。
+# 对于中国开发者
+&nbsp; &nbsp; DCWriterLite通过了国产的麒麟、方德、统信操作系统的原厂认证，符合信创规则。
+
+# 对于最终使用者
+&nbsp; &nbsp; DCWriterLite提供了简约而不简单的文档编辑功能：
+1. 它提供类似MS Word的用户体验，用户无需学习即可上手使用。
+2. 它能进行精确的实时分页，实现了所见即所得的功能，无限制的Undo/Redo操作，帮助用户快速达成目标。
+3. 提供表格、标题表格行等多项功能，可以快速创建复杂排版的文档。
+# 能胜任的应用场景
+1. 结构化电子病历系统：帮助医生书写病案首页、入院记录、病程记录、检查检验报告单、护理记录、患者知情同意书、出院记录等等等。
+2. 政府电子公文系统：帮助用户定义各种公文，并根据业务流程动态的调整公文内容和状态。
+3. 金融业务合规文档处理：它特有的结构化文档技术，使得系统更方便的从中抽取关键数据进行检查和维护。
+4. 制造业表单系统：可以快速定义复杂的表单录入界面，帮助制造业将各种复杂的节点数据逐一录入，方便后台快速读取和分析。
+# DCWriter商业版
+&nbsp; &nbsp; 您若想要更多的功能和服务，请了解[【DCWriter商业版】](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md).
 
 # DCWriterLite 开源版功能清单
 ## 运行环境
@@ -182,7 +216,6 @@ Provides a tree-like DOM model to represent all the content in the document. And
       - 可以设置为必填状态
       - 文本多行
 
-  您若想要更多的功能和服务，请了解[[DCWriter商业版]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)).
  
 # Donate 捐助
 You can donate by <a href="https://www.paypal.com/paypalme/yuanyongfu">paypal</a> , by <a href="https://raw.githubusercontent.com/dcsoft-yyf/DCNETProtector/main/alipay.jpg">alipay</a> , by <a href="https://raw.githubusercontent.com/dcsoft-yyf/DCNETProtector/main/wechat_pay.png">Wechat</a>,help author to feed twins born in 2020.
