@@ -2,7 +2,7 @@
 August 18, 2025
 
 <br />Author : yongfu-yuan(袁永福,MS MVP <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/msmvpsmall.png"/>) from CHINA . 
-<br />Email : [mailto:yyf9989@hotmail.com](yyf9989@hotmail.com)
+<br />Email : [yyf9989@hotmail.com](mailto:yyf9989@hotmail.com)
 <br />Site : [https://dcwriter.cn/](https://dcwriter.cn/).
 <br />Online demo : [https://dcsoft-yyf.github.io/DCWriterLite/index.html](https://dcsoft-yyf.github.io/DCWriterLite/index.html).
 # Update log
