@@ -46,8 +46,6 @@ August 18, 2025
 3. Financial Business Compliance Document Processing: Its unique structured document technology makes it easier for the system to extract key data from documents for inspection and maintenance.
 4. Manufacturing Industry Form Systems: Enabling the rapid definition of complex form input interfaces, helping the manufacturing industry input various complex node data one by one, and facilitating quick reading and analysis by the backend.
  
-# DCWriter Business Edition
-&nbsp; &nbsp; If you want more features and services, please learn about [[the DCWriter Business Edition]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md)) . 
 
 # Screen snapshort
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-1.png"/>
@@ -55,12 +53,18 @@ August 18, 2025
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-3.png"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dcwl-4.png"/>
 
+&nbsp; &nbsp; You want this ?
+<img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/dc-be.jpg"/>
+&nbsp; &nbsp; But this is DCWriter Business Edition, please learn about [[the DCWriter Business Edition]](https://github.com/dcsoft-yyf/DCWriterLite/blob/main/README-be.md) . 
+
+
 # DCWriterLite Open Source Edition Feature List
 ## Operating Environment
 - Supports Windows, Linux, MacOS, iOS, Android, UOS, Kylin, Fde, and other operating systems.
 <img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/uos.jpg"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/kylin.jpg"/>
 <br/><img src="https://raw.githubusercontent.com/dcsoft-yyf/DCWriterLite/refs/heads/main/screensnapshort/fde.jpg"/>
+
 
 - Supports Chrome, Firefox, and other browsers.
 - Pure front-end components, does not rely on server-side, and does not depend on any third-party components.
