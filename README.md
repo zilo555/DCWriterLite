@@ -38,7 +38,7 @@ August 18, 2025
 3. The commercial version also provides writing trace retention, multi-level permission control, and various medical expressions such as dental charts and menstrual history. It can also automatically calculate the scores of rating scales.
 4. In China, this editor software is already running in at least 50,000 hospitals, and it is estimated that 500,000 doctors use the software every day to write more than 10 million pages of medical records.
 5. [Function Demo Video: AI Assists Doctors in Writing Medical Records - 1](https://www.facebook.com/chinanjyyf.chinanjyyf.5/videos/748334408177464)
-6. [Function Demo Video: AI Assists Doctors in Writing Medical Records - 2](https://www.facebook.com/chinanjyyf.chinanjyyf.5/videos/748334408177464)
+6. [Function Demo Video: AI Assists Doctors in Writing Medical Records - 2](https://www.facebook.com/chinanjyyf.chinanjyyf.5/videos/1716579789030019)
 
 ## For Chinese Developers
 &nbsp;&nbsp;DCWriterLite has passed the official certification of domestic operating systems such as Kylin, Foundersoft, and Tongxin, complying with the requirements of the Xin Chuang.
@@ -166,7 +166,7 @@ Provides a tree-like DOM model to represent all the content in the document. And
 3. 商业版还提供书写痕迹保留，多级权限控制，多种医学表达式，比如牙位图，月经史等等。并能自动计算评分量表分值。
 4. 在中国，已经有至少5万家医院运行着这个编辑器软件，估计每天有50万个医生使用该软件书写了超过1000万页的病历文档。
 5. [功能演示视频：AI帮助医生写病历-1](https://www.facebook.com/chinanjyyf.chinanjyyf.5/videos/748334408177464)
-6. [功能演示视频：AI帮助医生写病历-2](https://www.facebook.com/chinanjyyf.chinanjyyf.5/videos/748334408177464)
+6. [功能演示视频：AI帮助医生写病历-2](https://www.facebook.com/chinanjyyf.chinanjyyf.5/videos/1716579789030019)
 
 # 对于中国开发者
 &nbsp; &nbsp; DCWriterLite通过了国产的麒麟、方德、统信操作系统的原厂认证，符合信创规则。
