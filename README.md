@@ -20,17 +20,17 @@ August 18, 2025
 3. This project shows how to trimming the Blazor WebAssembly framework. This helps developers understand part of the underlying principles of Blazor WebAssembly, reduce the size of the final software file (dotnet.wasm), and improve software loading speed.
 
 ## For B2B Developers
-1. DCWriterLite provides distinctive structured document functions. It supports free text input and also offers form areas to restrict the input methods for specific regions.
-2. DCWriterLite implements a custom DOM model, which provides unlimited extensibility. Developers can create new document element types based on this, making the software more in line with specific business requirements. For example, developers can use it to build template creation tools to dynamically define various complex form interfaces required for user business.
+1. It provides distinctive structured document functions. It supports free text input and also offers form areas to restrict the input methods for specific regions.
+2. It implements a custom DOM model, which provides unlimited extensibility. Developers can create new document element types based on this, making the software more in line with specific business requirements. For example, developers can use it to build template creation tools to dynamically define various complex form interfaces required for user business.
 3. Instead of being based on HTML DOM, DCWriterLite implements its own document **layout** algorithm, which breaks through some technical limitations of HTML DOM. For instance, it achieves a reliable Undo/Redo function and ensures completely consistent **layout** results across different browsers.
-4. DCWriterLite uses XML format for storage, featuring a simple structure. This allows developers to easily develop backend programs to process millions of documents in batches without calling the DCWriterLite software module.
+4. It uses XML format for storage, featuring a simple structure. This allows developers to easily develop backend programs to process millions of documents in batches without calling the DCWriterLite software module.
 
 ## For Web Developers
 &nbsp;&nbsp;DCWriterLite offers the following user-friendly features:
-1. It is a pure front-end component that does not depend on third-party components. It supports mainstream browsers such as Chrome and Firefox, enabling simple software deployment and updates.
-2. It can run on various operating systems including Windows, Linux, Mac, Android, and iOS, with consistent behavior across all these operating systems.
-3. It provides a very concise API interface, making it convenient to implement the multi-document mode with tabbed pages.
-
+1. It is a pure front-end component that does not depend on third-party components and supports mainstream browsers such as Chrome and Firefox.
+2. It supports real-time pagination, full WYSIWYG (What You See Is What You Get) functionality, achieves completely consistent typesetting effects across different browsers, and offers reliable Undo/Redo operations.
+3. It supports multiple operating systems including Windows, Linux, Mac, Android, and iOS.
+4. It provides a very concise API (Application Programming Interface) that allows for easy implementation of the multi-document mode with pagination tabs.
 ## For Chinese Developers
 &nbsp;&nbsp;DCWriterLite has passed the official certification of domestic operating systems such as Kylin, Foundersoft, and Tongxin, complying with the requirements of the Xin Chuang.
 
@@ -145,9 +145,10 @@ Provides a tree-like DOM model to represent all the content in the document. And
 4. DCWriterLite采用XML格式进行存储，结构简单。这就使得开发者可以很容易开发出后台程序来批量处理数百万份文档而不必调用DCWriterLite软件模块。
 # 对于Web开发者
 &nbsp; &nbsp; DCWriterLite提供以下令人舒服的特性：
-1. 它是一个纯前端的组件，不依赖于第三方组件，支持Chrome和Firefox等主流浏览器，软件部署和更新很简单。
-2. 它能运行在Windows、Linux、Mac、安卓、iOS等多种操作系统上面，在各种操作系统下的行为是一致的。
-3. 它提供很简洁的API编程接口，可以很方便的实现分页标签多文档模式。
+1. 它是一个纯前端的组件，不依赖于第三方组件，支持Chrome和Firefox等主流浏览器。
+2. 支持实时分页，完全的所见即所得，在不同的浏览器呈现完全一致的排版效果，可靠的Undo/Redo操作。 
+3. 支持Windows、Linux、Mac、安卓、iOS等多种操作系统。
+4. 它提供很简洁的API编程接口，可以很方便的实现分页标签多文档模式。
 # 对于中国开发者
 &nbsp; &nbsp; DCWriterLite通过了国产的麒麟、方德、统信操作系统的原厂认证，符合信创规则。
 
