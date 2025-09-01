@@ -31,6 +31,13 @@ August 18, 2025
 2. It supports real-time pagination, full WYSIWYG (What You See Is What You Get) functionality, achieves completely consistent typesetting effects across different browsers, and offers reliable Undo/Redo operations.
 3. It supports multiple operating systems including Windows, Linux, Mac, Android, and iOS.
 4. It provides a very concise API (Application Programming Interface) that allows for easy implementation of the multi-document mode with pagination tabs.
+# For Electronic Medical Record Developers
+&nbsp;&nbsp;DCWriterLite offers very professional features related to clinical medical documentation:
+1. Structured medical record documentation functionality.
+2. Capable of implementing medical record front pages, admission records, nursing records, progress notes, surgical records, informed consent forms, discharge summaries, examination reports, and imaging reports.
+3. The commercial version also provides writing trace retention, multi-level permission control, and various medical expressions such as dental charts and menstrual history. It can also automatically calculate the scores of rating scales.
+4. In China, this editor software is already running in at least 50,000 hospitals, and it is estimated that 500,000 doctors use the software every day to write more than 10 million pages of medical records.
+ 
 ## For Chinese Developers
 &nbsp;&nbsp;DCWriterLite has passed the official certification of domestic operating systems such as Kylin, Foundersoft, and Tongxin, complying with the requirements of the Xin Chuang.
 
@@ -149,6 +156,14 @@ Provides a tree-like DOM model to represent all the content in the document. And
 2. 支持实时分页，完全的所见即所得，在不同的浏览器呈现完全一致的排版效果，可靠的Undo/Redo操作。 
 3. 支持Windows、Linux、Mac、安卓、iOS等多种操作系统。
 4. 它提供很简洁的API编程接口，可以很方便的实现分页标签多文档模式。
+
+# 对于电子病历开发者
+ &nbsp; &nbsp; DCWriterLite提供非常专业的临床医疗文书的相关功能:
+1. 结构化病历文书功能。
+2. 可以实现病案首页，入院记录，护理记录，病程记录，手术记录，知情同意书，出院记录，检查报告，影像报告单。
+3. 商业版还提供书写痕迹保留，多级权限控制，多种医学表达式，比如牙位图，月经史等等。并能自动计算评分量表分值。
+4. 在中国，已经有至少5万家医院运行着这个编辑器软件，估计每天有50万个医生使用该软件书写了超过1000万页的病历文档。
+
 # 对于中国开发者
 &nbsp; &nbsp; DCWriterLite通过了国产的麒麟、方德、统信操作系统的原厂认证，符合信创规则。
 
